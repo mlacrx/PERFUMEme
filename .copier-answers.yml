@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: 08e8b92
+_src_path: gh:schwallergroup/copier-liac-minimal
+author_email: marie.lacroix@epfl.ch
+author_name: Marie Lacroix
+github_org: mlacrx
+package_name: perfume_package
+project_name: perfume-package
+short_description: Determine if a molecule given by the user is present in a perfume
+    and what are its main properties
