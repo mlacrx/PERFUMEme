@@ -70,8 +70,8 @@ def is_toxic_skin(smiles):
         return look_toxicity_skin(sections)
 
     except requests.exceptions.RequestException as e:
-        print(f"Erreur de requête PubChem : {e}")
+        print(f"PubChem request error : {e}")
         return False
     except Exception as e:
-        print(f"Erreur inattendue : {e}")
+        print(f"Unexpected error : {e}")
         return False
