@@ -1,0 +1,34 @@
+[
+  {
+    "name": "ethanol",
+    "smiles": "CCO"
+  },
+  {
+    "name": "methanol",
+    "smiles": "CO"
+  },
+  {
+    "name": "water",
+    "smiles": "O"
+  },
+  {
+    "name": "Hydroquinone",
+    "smiles": "C1=CC(=CC=C1O)O"
+  },
+  {
+    "name": "Ambroxan",
+    "smiles": "C[C@]12CCCC([C@@H]1CC[C@@]3([C@@H]2CCO3)C)(C)C"
+  },
+  {
+    "name": "Linalool",
+    "smiles": "CC(=CCCC(C)(C=C)O)C"
+  },
+  {
+    "name": "Hedione",
+    "smiles": "CCCCCC1C(CCC1=O)CC(=O)OC"
+  },
+  {
+    "name": "3,5-Dimethyl-3-cyclohexene carboxaldehyde",
+    "smiles": "CC1CC(CC(=C1)C)C=O"
+  }
+]
