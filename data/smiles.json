@@ -1,19 +1,38 @@
 [
   {
     "name": "ethanol",
-    "smiles": "CCO"
+    "smiles": "CCO",
+    "odor": [
+      "alcoholic",
+      "ethereal",
+      "fragrant",
+      "medicinal",
+      "solvent",
+      "sweet",
+      "vinous"
+    ]
   },
   {
     "name": "methanol",
-    "smiles": "CO"
+    "smiles": "CO",
+    "odor": [
+      "alcoholic"
+    ]
   },
   {
     "name": "water",
-    "smiles": "O"
+    "smiles": "O",
+    "odor": [
+      "odorless"
+    ]
   },
   {
     "name": "Hydroquinone",
-    "smiles": "C1=CC(=CC=C1O)O"
+    "smiles": "C1=CC(=CC=C1O)O",
+    "odor": [
+      "astringent",
+      "sweet"
+    ]
   },
   {
     "name": "Ambroxan",
@@ -21,7 +40,26 @@
   },
   {
     "name": "Linalool",
-    "smiles": "CC(=CCCC(C)(C=C)O)C"
+    "smiles": "CC(=CCCC(C)(C=C)O)C",
+    "odor": [
+      "berry",
+      "blueberry",
+      "bois",
+      "citrus",
+      "floral",
+      "fresh",
+      "green",
+      "lavender",
+      "lemon",
+      "orange",
+      "petitgrain",
+      "rose",
+      "spicy",
+      "sweet",
+      "terpenic",
+      "wax",
+      "woody"
+    ]
   },
   {
     "name": "Hedione",
@@ -33,6 +71,547 @@
   },
   {
     "name": "Limonene",
-    "smiles": "CC1=CCC(CC1)C(=C)C"
+    "smiles": "CC1=CCC(CC1)C(=C)C",
+    "odor": [
+      "aromatic",
+      "camphoraceous",
+      "citrus",
+      "eum",
+      "harsh",
+      "herbaceous",
+      "hydrocarbon",
+      "lemon",
+      "orange",
+      "paint",
+      "penetrating",
+      "petrol",
+      "phenolic",
+      "resinous",
+      "terpenic",
+      "turpentine",
+      "woody"
+    ]
+  },
+  {
+    "name": "ALCOHOL",
+    "smiles": "CCO"
+  },
+  {
+    "name": "GERANIOL",
+    "smiles": "CC(=CCC/C(=C/CO)/C)C",
+    "odor": [
+      "apple",
+      "apricot",
+      "berry",
+      "citronella",
+      "citrus",
+      "floral",
+      "fruity",
+      "geranium",
+      "rose",
+      "sweet",
+      "wax"
+    ]
+  },
+  {
+    "name": "HYDROXYCITRONELLAL",
+    "smiles": "CC(CCCC(C)(C)O)CC=O",
+    "odor": [
+      "citrus",
+      "floral",
+      "green",
+      "lily",
+      "melon",
+      "sweet",
+      "tropical",
+      "wax",
+      "waxy"
+    ]
+  },
+  {
+    "name": "BUTYL METHOXYDIBENZOYLMETHANE",
+    "smiles": "CC(C)(C)C1=CC=C(C=C1)C(=O)CC(=O)C2=CC=C(C=C2)OC"
+  },
+  {
+    "name": "ALPHA-ISOMETHYL IONONE",
+    "smiles": "CC1=CCCC(C1/C=C(\\C)/C(=O)C)(C)C"
+  },
+  {
+    "name": "CITRONELLOL",
+    "smiles": "CC(CCC=C(C)C)CCO",
+    "odor": [
+      "citrus",
+      "fatty",
+      "floral",
+      "geranium",
+      "green",
+      "leathery",
+      "rose",
+      "sweet",
+      "terpenic",
+      "wax"
+    ]
+  },
+  {
+    "name": "BUTYLENE GLYCOL",
+    "smiles": "CC(CCO)O"
+  },
+  {
+    "name": "PENTYLENE GLYCOL",
+    "smiles": "CCCC(CO)O"
+  },
+  {
+    "name": "CITRAL",
+    "smiles": "CC(=CCC/C(=C/C=O)/C)C",
+    "odor": [
+      "citrus",
+      "fresh",
+      "fruity",
+      "green",
+      "juicy",
+      "lemon",
+      "minty",
+      "sharp",
+      "sweet",
+      "tart"
+    ]
+  },
+  {
+    "name": "CAPRYLYL GLYCOL",
+    "smiles": "CCCCCCC(CO)O"
+  },
+  {
+    "name": "EUGENOL",
+    "smiles": "COC1=C(C=CC(=C1)CC=C)O",
+    "odor": [
+      "allspice",
+      "bacon",
+      "cinnamyl",
+      "clove",
+      "dry",
+      "floral",
+      "ham",
+      "honey",
+      "phenolic",
+      "pungent",
+      "savory",
+      "smoky",
+      "spicy",
+      "sweet",
+      "warm",
+      "woody"
+    ]
+  },
+  {
+    "name": "FARNESOL",
+    "smiles": "CC(=CCCC(=CCCC(=CCO)C)C)C",
+    "odor": [
+      "angelica",
+      "anisic",
+      "apricot",
+      "balsamic",
+      "citrus",
+      "clove",
+      "delicate",
+      "dry",
+      "floral",
+      "flower",
+      "fresh",
+      "grapefruit",
+      "lily",
+      "lime",
+      "linden",
+      "muguet",
+      "oily",
+      "orange",
+      "peach",
+      "pear",
+      "rose",
+      "sweet",
+      "wax",
+      "waxy"
+    ]
+  },
+  {
+    "name": "BENZYL ALCOHOL",
+    "smiles": "C1=CC=C(C=C1)CO",
+    "odor": [
+      "almond",
+      "aromatic",
+      "balsamic",
+      "berry",
+      "chemical",
+      "cherry",
+      "citrus",
+      "floral",
+      "fruity",
+      "grapefruit",
+      "phenolic",
+      "rose",
+      "sweet",
+      "walnut"
+    ]
+  },
+  {
+    "name": "COUMARIN",
+    "smiles": "C1=CC=C2C(=C1)C=CC(=O)O2",
+    "odor": [
+      "coumarinic",
+      "green",
+      "hay",
+      "mown",
+      "spicy",
+      "sweet",
+      "tonka",
+      "vanilla"
+    ]
+  },
+  {
+    "name": "ISOEUGENOL",
+    "smiles": "C/C=C/C1=CC(=C(C=C1)O)OC",
+    "odor": [
+      "carnation",
+      "clove",
+      "eugenol",
+      "floral",
+      "phenolic",
+      "spicy",
+      "sweet",
+      "warm",
+      "woody"
+    ]
+  },
+  {
+    "name": "PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE",
+    "smiles": "CC(C)(C)C1=CC(=CC(=C1O)C(C)(C)C)CCC(=O)OCC(COC(=O)CCC2=CC(=C(C(=C2)C(C)(C)C)O)C(C)(C)C)(COC(=O)CCC3=CC(=C(C(=C3)C(C)(C)C)O)C(C)(C)C)COC(=O)CCC4=CC(=C(C(=C4)C(C)(C)C)O)C(C)(C)C"
+  },
+  {
+    "name": "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE",
+    "smiles": "CCCCCCOC(=O)C1=CC=CC=C1C(=O)C2=C(C=C(C=C2)N(CC)CC)O"
+  },
+  {
+    "name": "BENZYL SALICYLATE",
+    "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2O",
+    "odor": [
+      "balsamic",
+      "clean",
+      "floral",
+      "herbaceous",
+      "herbal",
+      "medicinal",
+      "oily",
+      "sweet"
+    ]
+  },
+  {
+    "name": "ETHYLHEXYL SALICYLATE",
+    "smiles": "CCCCC(CC)COC(=O)C1=CC=CC=C1O"
+  },
+  {
+    "name": "METHYL ANTHRANILATE",
+    "smiles": "COC(=O)C1=CC=CC=C1N",
+    "odor": [
+      "chocolate",
+      "coffee",
+      "floral",
+      "flower",
+      "fruity",
+      "grape",
+      "grapefruit",
+      "herbaceous",
+      "jasmin",
+      "lemon",
+      "lime",
+      "medicinal",
+      "musty",
+      "neroli",
+      "orange",
+      "powdery",
+      "strawberry",
+      "sweet"
+    ]
+  },
+  {
+    "name": "BENZYL BENZOATE",
+    "smiles": "C1=CC=C(C=C1)COC(=O)C2=CC=CC=C2",
+    "odor": [
+      "almond",
+      "aromatic",
+      "balsamic",
+      "bitter",
+      "cheese",
+      "cherry",
+      "floral",
+      "fruity",
+      "herbaceous",
+      "herbal",
+      "oily",
+      "pineapple",
+      "powdery",
+      "strawberry",
+      "sweet"
+    ]
+  },
+  {
+    "name": "HEXYL CINNAMAL",
+    "smiles": "CCCCCC/C(=C\\C1=CC=CC=C1)/C=O"
+  },
+  {
+    "name": "AMYL CINNAMAL",
+    "smiles": "CCCCC/C(=C/C1=CC=CC=C1)/C=O"
+  },
+  {
+    "name": "TRIS(TETRAMETHYLHYDROXYPIPERIDINOL) CITRATE",
+    "smiles": "CC1(CC(CC(N1O)(C)C)O)C.CC1(CC(CC(N1O)(C)C)O)C.CC1(CC(CC(N1O)(C)C)O)C.C(C(=O)O)C(CC(=O)O)(C(=O)O)O"
+  },
+  {
+    "name": "ANISE ALCOHOL",
+    "smiles": "COC1=CC=C(C=C1)CO"
+  },
+  {
+    "name": "CINNAMYL ALCOHOL",
+    "smiles": "C1=CC=C(C=C1)/C=C/CO",
+    "odor": [
+      "balsamic",
+      "cinnamyl",
+      "fermented",
+      "floral",
+      "green",
+      "hyacinth",
+      "oily",
+      "powdery",
+      "spicy",
+      "sweet"
+    ]
+  },
+  {
+    "name": "ETHYLHEXYL METHOXYCINNAMATE",
+    "smiles": "CCCCC(CC)COC(=O)/C=C/C1=CC=C(C=C1)OC"
+  },
+  {
+    "name": "BHT",
+    "smiles": "CC1=CC(=C(C(=C1)C(C)(C)C)O)C(C)(C)C"
+  },
+  {
+    "name": "BENZYL CINNAMATE",
+    "smiles": "C1=CC=C(C=C1)COC(=O)/C=C/C2=CC=CC=C2",
+    "odor": [
+      "apricot",
+      "balsamic",
+      "cherry",
+      "chocolate",
+      "coumarinic",
+      "floral",
+      "fruity",
+      "honey",
+      "peach",
+      "pineapple",
+      "powdery",
+      "spicy",
+      "sweet"
+    ]
+  },
+  {
+    "name": "CINNAMAL",
+    "smiles": "C1=CC=C(C=C1)/C=C/C=O"
+  },
+  {
+    "name": "BUTYLPHENYL METHYLPROPIONAL",
+    "smiles": "CC(CC1=CC=C(C=C1)C(C)(C)C)C=O"
+  },
+  {
+    "name": "METHYL 2-OCTYNOATE",
+    "smiles": "CCCCCC#CC(=O)OC",
+    "odor": [
+      "cucumber",
+      "fatty",
+      "floral",
+      "fruity",
+      "green",
+      "leaf",
+      "leafy",
+      "melon",
+      "vegetable",
+      "violet",
+      "wax",
+      "waxy",
+      "winey"
+    ]
+  },
+  {
+    "name": "AMYLCINNAMYL ALCOHOL",
+    "smiles": "CCCCC/C(=C\\C1=CC=CC=C1)/CO"
+  },
+  {
+    "name": "ALCOHOL DENAT",
+    "smiles": "CCO"
+  },
+  {
+    "name": "TOCOPHEROL",
+    "smiles": "CC1=C(C2=C(CC[C@@](O2)(C)CCC[C@H](C)CCC[C@H](C)CCCC(C)C)C(=C1O)C)C"
+  },
+  {
+    "name": "UNDECANE",
+    "smiles": "CCCCCCCCCCC",
+    "odor": [
+      "alkane",
+      "gassy",
+      "hydrocarbon"
+    ]
+  },
+  {
+    "name": "GLYCERIN",
+    "smiles": "C(C(CO)O)O"
+  },
+  {
+    "name": "TRIDECANE",
+    "smiles": "CCCCCCCCCCCCC",
+    "odor": [
+      "hydrocarbon",
+      "wax"
+    ]
+  },
+  {
+    "name": "HEXYL LAURATE",
+    "smiles": "CCCCCCCCCCCC(=O)OCCCCCC",
+    "odor": [
+      "creamy",
+      "fatty",
+      "oily",
+      "waxy"
+    ]
+  },
+  {
+    "name": "MAGNESIUM SULFATE",
+    "smiles": "[O-]S(=O)(=O)[O-].[Mg+2]",
+    "odor": [
+      "odorless"
+    ]
+  },
+  {
+    "name": "DISTEARDIMONIUM HECTORITE",
+    "smiles": "[Li+].CCCCCCCCCCCCCCCCCC[N+](C)(C)CCCCCCCCCCCCCCCCCC.[OH-].[OH-].[O-][Si]12O[Si](O1)(O[Si]3(O[Si](O3)(O2)[O-])[O-])[O-].[Na+].[Mg+2]"
+  },
+  {
+    "name": "ISOBUTANE",
+    "smiles": "CC(C)C"
+  },
+  {
+    "name": "SORBITOL",
+    "smiles": "C([C@H]([C@H]([C@@H]([C@H](CO)O)O)O)O)O"
+  },
+  {
+    "name": "TRIHYDROXYSTEARIN",
+    "smiles": "CCCCCCC(CCCCCCCCCCC(=O)OCC(COC(=O)CCCCCCCCCCC(CCCCCC)O)OC(=O)CCCCCCCCCCC(CCCCCC)O)O"
+  },
+  {
+    "name": "ALUMINUM HYDROXIDE",
+    "smiles": "[OH-].[OH-].[OH-].[Al+3]"
+  },
+  {
+    "name": "DISODIUM PHOSPHATE",
+    "smiles": "OP(=O)([O-])[O-].[Na+].[Na+]"
+  },
+  {
+    "name": "DISODIUM STEAROYL GLUTAMATE",
+    "smiles": "CCCCCCCCCCCCCCCCCC(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-].[Na+].[Na+]"
+  },
+  {
+    "name": "PROPANEDIOL",
+    "smiles": "CCC(O)O"
+  },
+  {
+    "name": "PROPYLENE GLYCOL",
+    "smiles": "CC(CO)O",
+    "odor": [
+      "alcoholic",
+      "odorless",
+      "sweet"
+    ]
+  },
+  {
+    "name": "CITRIC ACID",
+    "smiles": "C(C(=O)O)C(CC(=O)O)(C(=O)O)O",
+    "odor": [
+      "acid",
+      "clean",
+      "lemon",
+      "odorless",
+      "tart"
+    ]
+  },
+  {
+    "name": "ETHYLHEXYLGLYCERIN",
+    "smiles": "CCCCC(CC)COCC(CO)O"
+  },
+  {
+    "name": "PHENOXYETHANOL",
+    "smiles": "C1=CC=C(C=C1)OCCO"
+  },
+  {
+    "name": "BENZOTRIAZOLYL DODECYL P-CRESOL",
+    "smiles": "CCCCCCCCCCCCC1=C(C(=CC(=C1)C)N2N=C3C=CC=CC3=N2)O"
+  },
+  {
+    "name": "BUTYLPHTHALIMIDE",
+    "smiles": "CCCCN1C(=O)C2=CC=CC=C2C1=O"
+  },
+  {
+    "name": "ISOPROPYLPHTHALIMIDE",
+    "smiles": "CC(C)N1C(=O)C2=CC=CC=C2C1=O"
+  },
+  {
+    "name": "SODIUM HYDROXIDE",
+    "smiles": "[OH-].[Na+]"
+  },
+  {
+    "name": "Diethylene Glycol Monoethyl Ether",
+    "smiles": "CCOCCOCCO",
+    "odor": [
+      "ethereal"
+    ]
+  },
+  {
+    "name": "Butylene glycol dicaprate",
+    "smiles": "CCCCCCCCCC(=O)OCCC(C)OC(=O)CCCCCCCCC"
+  },
+  {
+    "name": "Dipropylene glycol caprylate",
+    "smiles": "CCCCCCCC(=O)OC(C)COCC(C)O"
+  },
+  {
+    "name": "Cetyl PEG/PPG-10/1 dimethicone",
+    "smiles": "CCCCCCCCCCCCCCCC[Si](C)(O[Si](C)(C)OCCOCC(C)O)O[Si](C)(C)O[Si](C)(C)C"
+  },
+  {
+    "name": "Acetylated glycol stearate",
+    "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCOC(=O)C"
+  },
+  {
+    "name": "acrylonitrile",
+    "smiles": "C=CC#N"
+  },
+  {
+    "name": "methyl methacrylate",
+    "smiles": "CC(=C)C(=O)OC",
+    "odor": [
+      "acrid",
+      "acrylate",
+      "acrylic",
+      "apple",
+      "aromatic",
+      "estry",
+      "fruity",
+      "grape",
+      "plastic",
+      "sharp",
+      "sulfurous",
+      "sweet",
+      "unpleasant"
+    ]
+  },
+  {
+    "name": "vinylidene chloride",
+    "smiles": "C=C(Cl)Cl"
   }
 ]
