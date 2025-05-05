@@ -1,0 +1,970 @@
+[
+    {
+        "name": "Aqua Allegoria Rosa Verde",
+        "brand": "Guerlain",
+        "molecules": [
+            "ALCOHOL",
+            "WATER",
+            "ROSA DAMASCENA FLOWER WATER",
+            "ROSA CENTIFOLIA FLOWER WATER",
+            "LIMONENE",
+            "GERANIOL",
+            "HYDROXYCITRONELLAL",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "LINALOOL",
+            "ALPHA-ISOMETHYL IONONE",
+            "CITRONELLOL",
+            "DIPROPYLENE GLYCOL",
+            "BUTYLENE GLYCOL",
+            "PENTYLENE GLYCOL",
+            "CITRAL",
+            "CAPRYLYL GLYCOL",
+            "EUGENOL",
+            "FARNESOL",    
+            "BENZYL ALCOHOL"
+        ],
+        "notes": {
+            "top": [
+                "Cucumber",
+                "Bergamot",
+                "Mint"
+            ],
+            "heart": [
+                "Rose",
+                "Violet",
+                "Pear"
+            ],
+            "base": [
+                "Cyprus",
+                "Musk",
+                "Iris"
+            ]
+        }
+    },
+    {
+        "name": "Aqua Allegoria Nettare di Sole",
+        "brand": "Guerlain",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA (WATER)",
+            "LIMONENE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "LINALOOL",
+            "GERANIOL",
+            "COUMARIN",
+            "CITRAL",
+            "CITRONELLOL",
+            "ISOEUGENOL",
+            "PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE",
+            "BENZYL ALCOHOL"
+        ],
+        "notes": {
+            "top": [
+                "Orange Blossom",
+                "Bergamot",
+                "Marine note"
+            ],
+            "heart": [
+                "Rose",
+                "Magnolia",
+                "Jasmine"
+            ],
+            "base": [
+                "Honey"
+            ]
+        }
+    },
+    {
+        "name": "Aqua Allegoria Mandarine Basilic",
+        "brand": "Guerlain",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA (WATER)",
+            "LIMONENE",
+            "PEG-40 HYDROGENATED CASTOR OIL",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "LINALOOL",
+            "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE",
+            "HYDROXYCITRONELLAL",
+            "CITRAL",
+            "CITRONELLOL",
+            "PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE",
+            "EUGENOL",
+            "GERANIOL"
+        ],
+        "notes": {
+            "top": [
+                "Mandarin",
+                "Orange",
+                "Basil"
+            ],
+            "heart": [
+                "Peony",
+                "Roman Chamomile"
+            ],
+            "base": [
+                "Sandalwood",
+                "Amber",
+                "Tea"
+            ]
+        }
+    },
+    {
+        "name": "Alien",
+        "brand": "Mugler",
+        "molecules": [
+            "ALCOHOL",
+            "WATER",
+            "BENZYL SALICYLATE",
+            "BENZYL ALCOHOL",
+            "ETHYLHEXYL SALICYLATE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "COUMARIN",
+            "GERANIOL",
+            "METHYL ANTHRANILATE",
+            "ALPHA-ISOMETHYL IONONE",
+            "CITRONELLOL",
+            "CITRAL",
+            "BENZYL BENZOATE"
+        ],
+        "notes": {
+            "top": [
+                "Mandarin"
+            ],
+            "heart": [
+                "Orange Blossom",
+                "Jasmine"
+            ],
+            "base": [
+                "Amber Woods",
+                "Vanilla",
+                "Amber",
+                "Cashmeran"
+            ]
+        }
+    }
+    {
+        "name": "Angel",
+        "brand": "Mugler",
+        "molecules": [
+            "ALCOHOL",
+            "WATER",
+            "COUMARIN",
+            "LIMONENE",
+            "ETHYLHEXYL SALICYLATE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "LINALOOL",
+            "HEXYL CINNAMAL",
+            "GERANIOL",
+            "AMYL CINNAMAL",
+            "CITRONELLOL",
+            "BENZYL SALICYLATE",
+            "BENZYL ALCOHOL",
+            "FARNESOL",
+            "CITRAL",
+            "EUGENOL",
+            "TRIS(TETRAMETHYLHYDROXYPIPERIDINOL) CITRATE",
+            "ISOEUGENOL",
+            "ANISE ALCOHOL"
+        ],
+        "notes": {
+            "top": [
+                "Mandarin",
+                "Bergamot"
+            ],
+            "heart": [
+                "Passion fruit"
+            ],
+            "base": [
+                "Patchouli",
+                "Vanilla",
+                "Cocoa",
+                "Honey",
+                "Heliotrope",
+                "Caramel"
+            ]
+        }
+    },
+    {
+        "name": "Chance",
+        "brand": "Chanel",
+        "molecules": [
+            "ALCOHOL", "WATER", "LIMONENE", "LINALOOL", "BENZYL SALICYLATE", "HEXYL CINNAMAL",
+            "HYDROXYCITRONELLAL", "CITRONELLOL", "COUMARIN", "CITRAL", "GERANIOL", "BENZYL BENZOATE",
+            "BENZYL ALCOHOL", "EUGENOL", "FARNESOL", "BUTYL METHOXYDIBENZOYLMETHANE"
+        ],
+        "notes": {
+            "top": ["BERGAMOT", "PINK BERRIES", "LEMON"],
+            "heart": ["ROSE", "JASMINE", "HYACINTH", "PINEAPPLE"],
+            "base": ["VETIVER", "PATCHOULI", "VANILLA", "WHITE MUSK", "IRIS"]
+        }
+    },
+    {
+        "name": "Coco",
+        "brand": "Chanel",
+        "molecules": [
+            "ALCOHOL", "WATER", "BENZYL SALICYLATE", "LIMONENE", "GERANIOL", "COUMARIN", "LINALOOL",
+            "CITRONELLOL", "EUGENOL", "HEXYL CINNAMAL", "ALPHA-ISOMETHYL IONONE", "CITRAL", "BENZYL BENZOATE",
+            "CINNAMYL ALCOHOL", "FARNESOL", "ISOEUGENOL", "BENZYL ALCOHOL"
+        ],
+        "notes": {
+            "top": ["MANDARIN"],
+            "heart": ["ROSE", "ORANGE BLOSSOM", "PEACH", "JASMINE", "CLOVE", "YLANG-YLANG", "MIMOSA"],
+            "base": ["CINNAMON", "PATCHOULI", "VANILLA", "SANDALWOOD", "CIVET", "TONKA BEAN"]
+        }
+    },
+    
+    {
+        "name": "Coco Mademoiselle",
+        "brand": "Chanel",
+        "molecules": [
+            "ALCOHOL", "WATER", "LINALOOL", "LIMONENE", "BENZYL SALICYLATE", "COUMARIN",
+            "CITRONELLOL", "GERANIOL", "HEXYL CINNAMAL", "CITRAL", "BENZYL BENZOATE", "BENZYL ALCOHOL",
+            "BUTYL METHOXYDIBENZOYLMETHANE"
+        ],
+        "notes": {
+            "top": ["BERGAMOT", "ORANGE"],
+            "heart": ["ROSE", "PEACH", "JASMINE"],
+            "base": ["OAKMOSS", "VETIVER", "PATCHOULI", "VANILLA", "WHITE MUSK"]
+        }
+    },
+    {
+        "name": "Dior Homme",
+        "brand": "Dior",
+        "molecules": [
+            "ALCOHOL", "WATER", "LIMONENE", "ETHYLHEXYL METHOXYCINNAMATE", "HYDROXYCITRONELLAL", "LINALOOL",
+            "HEXYL CINNAMAL", "CITRONELLOL", "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE", "BHT",
+            "BUTYL METHOXYDIBENZOYLMETHANE", "ETHYLHEXYL SALICYLATE", "COUMARIN", "CITRAL", "GERANIOL"
+        ],
+        "notes": {
+            "top": ["BERGAMOT", "LAVENDER", "CLARY SAGE"],
+            "heart": ["COCOA", "AMBERGRIS", "IRIS"],
+            "base": ["PATCHOULI", "VETIVER", "LEATHER"]
+        }
+    },
+    {
+        "name": "Eau de Rochas",
+        "brand": "Rochas",
+        "molecules": [
+            "ALCOHOL", "WATER", "LIMONENE", "ETHYLHEXYL METHOXYCINNAMATE",
+            "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE", "BHT", "HEXYL CINNAMAL",
+            "LINALOOL", "HYDROXYCITRONELLAL", "ALPHA-ISOMETHYL IONONE", "CITRAL",
+            "BENZYL BENZOATE", "COUMARIN", "CITRONELLOL", "GERANIOL"
+        ],
+        "notes": {
+            "top": ["Mandarin", "Grapefruit", "Bergamot", "Lemon"],
+            "heart": ["Rose", "Jasmine", "Hedione", "Narcissus"],
+            "base": ["Oakmoss", "Vetiver", "Sandalwood", "Myrrh"]
+        }
+    },
+    {
+        "name": "Egoïste",
+        "brand": "Chanel",
+        "molecules": [
+            "ALCOHOL", "WATER", "BENZYL BENZOATE", "BENZYL CINNAMATE",
+            "BENZYL SALICYLATE", "CINNAMAL", "CITRAL", "CITRONELLOL", "COUMARIN",
+            "EUGENOL", "FARNESOL", "GERANIOL", "ISOEUGENOL", "LIMONENE",
+            "LINALOOL", "BENZYL ALCOHOL"
+        ],
+        "notes": {
+            "top": ["Mandarin", "Peach", "Coriander"],
+            "heart": ["Cinnamon", "Rose", "Clove", "Plum"],
+            "base": ["Patchouli", "Vanilla", "Sandalwood", "Tonka Bean", "Myrrh", "Amber", "Cedar"]
+        }
+    },
+    {
+        "name": "Flower",
+        "brand": "Kenzo",
+        "molecules": [
+            "ALCOHOL", "WATER", "GERANIOL", "CITRONELLOL", "HYDROXYCITRONELLAL",
+            "LINALOOL", "ALPHA-ISOMETHYL IONONE", "LIMONENE", "BUTYLPHENYL METHYLPROPIONAL",
+            "FARNESOL", "ISOEUGENOL", "BHT", "CITRAL", "BENZYL ALCOHOL",
+            "BENZYL BENZOATE", "COUMARIN", "METHYL 2-OCTYNOATE", "BENZYL SALICYLATE"
+        ],
+        "notes": {
+            "top": ["Mandarin", "Blackcurrant", "Pink berries"],
+            "heart": ["Rose", "Jasmine", "Violet", "Hedione", "Carnation", "Hawthorn"],
+            "base": ["Vanilla", "White musk"]
+        }
+    },
+    {
+        "name": "Gaultier",
+        "brand": "Jean-Paul Gaultier",
+        "molecules": [
+            "ALCOHOL",
+            "WATER",
+            "BENZYL SALICYLATE",
+            "COUMARIN",
+            "HEXYL CINNAMAL",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "LINALOOL",
+            "LIMONENE",
+            "ALPHA-ISOMETHYL IONONE",
+            "CINNAMAL",
+            "EUGENOL",
+            "GERANIOL",
+            "FARNESOL",
+            "BENZYL ALCOHOL",
+            "ISOEUGENOL"
+        ],
+        "notes": {
+            "top": [
+                "Amber Woods"
+            ],
+            "heart": [
+                "Lavender",
+                "Orange blossom",
+                "Tuberose"
+            ],
+            "base": [
+                "Iso E Super",
+                "Vanilla",
+                "Coumarin",
+                "White musks",
+                "Amber",
+                "Labdanum"
+            ]
+        }
+    },
+    {
+        "name": "J'adore",
+        "brand": "Dior",
+        "molecules": [
+            "ALCOHOL",
+            "WATER",
+            "HEXYL CINNAMAL",
+            "BENZYL SALICYLATE",
+            "CITRONELLOL",
+            "HYDROXYCITRONELLAL",
+            "ALPHA-ISOMETHYL IONONE",
+            "BENZYL BENZOATE",
+            "LIMONENE",
+            "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE",
+            "LINALOOL",
+            "GERANIOL",
+            "PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE",
+            "CITRAL",
+            "BENZYL ALCOHOL",
+            "BENZYL CINNAMATE",
+            "CINNAMYL ALCOHOL",
+            "FARNESOL"
+        ],
+        "notes": {
+            "top": [
+                "Mandarin"
+            ],
+            "heart": [
+                "Rose",
+                "Violet",
+                "Peach",
+                "Jasmine",
+                "Plum",
+                "Ylang-Ylang",
+                "Lily of the valley",
+                "Champaca"
+            ],
+            "base": [
+                "White musks",
+                "Sandalwood",
+                "Vanillin"
+            ]
+        }
+    }
+    {
+        "name": "Jardins de Bagatelle",
+        "brand": "Guerlain",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA (WATER)",
+            "BENZYL SALICYLATE",
+            "HYDROXYCITRONELLAL",
+            "PEG-40 HYDROGENATED CASTOR OIL",
+            "AMYL CINNAMAL",
+            "DIPROPYLENE GLYCOL",
+            "ALPHA-ISOMETHYL IONONE",
+            "LIMONENE",
+            "LINALOOL",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "CITRONELLOL",
+            "BENZYL BENZOATE",
+            "EUGENOL",
+            "HEXYL CINNAMAL",
+            "GERANIOL",
+            "BENZYL ALCOHOL",
+            "COUMARIN",
+            "CITRAL",
+            "FARNESOL",
+            "BENZYL CINNAMATE",
+            "AMYLCINNAMYL ALCOHOL",
+            "ISOEUGENOL",
+            "CINNAMYL ALCOHOL"
+        ],
+        "notes": {
+            "top": [
+                "BERGAMOT",
+                "VIOLET",
+                "LEMON"
+            ],
+            "heart": [
+                "IRIS",
+                "CASSIA",
+                "NARCISSUS",
+                "LILY OF THE VALLEY"
+            ],
+            "base": [
+                "VETIVER",
+                "PATCHOULI",
+                "CIVET",
+                "CEDAR"
+            ]
+        }
+    },
+    {
+        "name": "L'eau d'Hadrien",
+        "brand": "Annick Goutal",
+        "molecules": [
+          "ALCOHOL DENAT",
+          "WATER)",
+          "LIMONENE",
+          "AMYL CINNAMAL",
+          "BENZYL ALCOHOL",
+          "BENZYL BENZOATE",
+          "BENZYL SALICYLATE",
+          "CITRAL",
+          "CITRONELLOL",
+          "EUGENOL",
+          "FARNESOL",
+          "GERANIOL",
+          "HYDROXYCITRONELLAL",
+          "ISOEUGENOL",
+          "LINALOOL"
+        ],
+        "notes": {
+          "top": [
+            "SICILIAN LEMON",
+            "CEDAR",
+            "GRAPEFRUIT",
+            "BERGAMOT"
+          ],
+          "heart": [
+            "ITALIAN GREEN MANDARIN",
+            "JUNIPER BERRIES"
+          ],
+          "base": [
+            "CYPRESS",
+            "YLANG YLANG",
+            "MUSK"
+          ]
+        }
+    },
+    
+    {
+        "name": "L'interdit",
+        "brand": "Givenchy",
+        "molecules": [
+          "ALCOHOL",
+          "WATER",
+          "ETHYLHEXYL METHOXYCINNAMATE",
+          "LINALOOL",
+          "LIMONENE",
+          "BUTYL METHOXYDIBENZOYLMETHANE",
+          "BUTYLENE GLYCOL DICAPRYLATE/DICAPRATE",
+          "CITRONELLOL",
+          "GERANIOL",
+          "BHT",
+          "BENZYL SALICYLATE",
+          "EUGENOL",
+          "ALPHA-ISOMETHYL IONONE",
+          "TOCOPHEROL",
+          "CITRAL",
+          "COUMARIN",
+          "BENZYL ALCOHOL"
+        ],
+        "notes": {
+          "top": [
+            "ESSENCE OF BERGAMOT FROM CALABRIA",
+            "ESSENCE OF FRESH GINGER FROM MADAGASCAR"
+          ],
+          "heart": [
+            "TUNISIAN ORANGE BLOSSOM ABSOLUTE",
+            "INDIAN SAMBAC JASMINE ABSOLUTE",
+            "INDIAN TUBEROSE ABSOLUTE"
+          ],
+          "base": [
+            "INDONESIAN PATCHOULI ESSENCE",
+            "HAITIAN VETIVER ESSENCE"
+          ]
+        }
+    },
+    {
+        "name": "La nuit de l'Homme",
+        "brand": "Yves Saint-Laurent",
+        "molecules": [
+          "ALCOHOL",
+          "AQUA / WATER",
+          "LINALOOL",
+          "LIMONENE",
+          "COUMARIN",
+          "BUTYL METHOXYDIBENZOYLMETHANE",
+          "ALPHA-ISOMETHYL IONONE",
+          "GERANIOL",
+          "CITRAL",
+          "ISOEUGENOL",
+          "METHYL ANTHRANILATE",
+          "CINNAMYL ALCOHOL"
+        ],
+        "notes": {
+          "top": [
+            "SAGE ESSENCE"
+          ],
+          "heart": [
+            "PATCHOULI HEART"
+          ],
+          "base": [
+            "SANDALWOOD OIL"
+          ]
+        }
+    },
+    {
+        "name": "La Petite Robe Noir",
+        "brand": "Guerlain",
+        "molecules": [
+          "ALCOHOL",
+          "WATER",
+          "LIMONENE",
+          "COUMARIN",
+          "BUTYL METHOXYDIBENZOYLMETHANE",
+          "CITRONELLOL",
+          "LINALOOL",
+          "GERANIOL",
+          "CITRAL",
+          "BENZYL ALCOHOL",
+          "FARNESOL",
+          "EUGENOL"
+        ],
+        "notes": {
+          "top": [
+            "LEMON"
+          ],
+          "heart": [
+            "ROSE",
+            "VIOLETTE",
+            "LICORICE",
+            "RASPBERRY",
+            "CHERRY",
+            "BADIANE"
+          ],
+          "base": [
+            "PATCHOULI",
+            "VANILLA",
+            "WHITE MUSK",
+            "HELIOTROPE",
+            "BITTER ALMOND"
+          ]
+        }
+    },
+    
+    {
+        "name": "La vie est belle",
+        "brand": "Lancôme",
+        "molecules": [
+          "WATER",
+          "UNDECANE",
+          "DIMETHICONE",
+          "GLYCERIN",
+          "TRIDECANE",
+          "POLYGLYCERYL-4 ISOSTEARATE",
+          "PENTYLENE GLYCOL",
+          "CETYL PEG/PPG-10/1 DIMETHICONE",
+          "HEXYL LAURATE",
+          "MAGNESIUM SULFATE",
+          "DISTEARDIMONIUM HECTORITE",
+          "ROSA GALLICA FLOWER EXTRACT",
+          "HELIANTHUS ANNUUS SEED OIL / SUNFLOWER SEED OIL",
+          "MORINGA OLEIFERA SEED EXTRACT",
+          "NYMPHAEA ALBA FLOWER EXTRACT",
+          "ISOBUTANE",
+          "SORBITOL",
+          "TRIHYDROXYSTEARIN",
+          "CELLULOSE GUM",
+          "ALUMINUM HYDROXIDE",
+          "DISODIUM PHOSPHATE",
+          "DISODIUM STEAROYL GLUTAMATE",
+          "PROPANEDIOL",
+          "PROPYLENE GLYCOL",
+          "CITRIC ACID",
+          "ACETYLATED GLYCOL STEARATE",
+          "ETHYLHEXYLGLYCERIN",
+          "ACRYLONITRILE/METHYL METHACRYLATE/VINYLIDENE CHLORIDE COPOLYMER",
+          "TOCOPHEROL",
+          "PENTAERYTHRITYL TETRA-DI-T-BUTYL HYDROXYHYDROCINNAMATE",
+          "PHENOXYETHANOL"
+        ],
+        "notes": {
+          "top": [
+            "CONCRÈTE D'IRIS PALLIDA",
+            "ACCORD GOURMAND"
+          ],
+          "heart": [
+            "ORANGE BLOSSOM",
+            "JASMINE SAMBAC ABSOLUTE"
+          ],
+          "base": [
+            "VANILLA ACCORD",
+            "PATCHOULI HEART ESSENCE"
+          ]
+        }
+    },
+    
+    {
+        "name": "Lady Million",
+        "brand": "Paco Rabanne",
+        "molecules": [
+          "ALCOHOL",
+          "WATER",
+          "LIMONENE",
+          "BENZYL SALICYLATE",
+          "ALPHA-ISOMETHYL IONONE",
+          "BENZOTRIAZOLYL DODECYL P-CRESOL",
+          "HYDROXYCITRONELLAL",
+          "BUTYLPHTHALIMIDE",
+          "ETHYLHEXYL SALICYLATE",
+          "BUTYL METHOXYDIBENZOYLMETHANE",
+          "HEXYL CINNAMAL",
+          "LINALOOL",
+          "ISOPROPYLPHTHALIMIDE",
+          "COUMARIN",
+          "CITRONELLOL",
+          "GERANIOL",
+          "CITRAL",
+          "BENZYL ALCOHOL",
+          "ISOEUGENOL"
+        ],
+        "notes": {
+          "top": [
+            "BOUQUET OF WHITE FLOWERS"
+          ],
+          "heart": [
+            "JASMINE ABSOLUTE"
+          ],
+          "base": [
+            "HONEY ACCORD"
+          ]
+        }
+    },
+    {
+        "name": "Libre",
+        "brand": "Yves Saint Laurent",
+        "molecules": [
+          "ALCOHOL", "WATER", "LIMONENE", "LINALOOL", "BENZYL SALICYLATE", "HYDROXYCITRONELLAL",
+          "BENZYL ALCOHOL", "ETHYLHEXYL SALICYLATE", "BUTYL METHOXYDIBENZOYLMETHANE", "COUMARIN",
+          "GERANIOL", "METHYL ANTHRANILATE", "CITRONELLOL", "CITRAL", "ISOEUGENOL",
+          "ALPHA-ISOMETHYL IONONE", "FARNESOL"
+        ],
+        "notes": {
+          "top": [
+            "MANDARIN",
+            "LAVENDER",
+            "BLACKCURRANT",
+            "PETITGRAIN"
+          ],
+          "heart": [
+            "JASMINE",
+            "LAVENDER",
+            "ORANGE BLOSSOM"
+          ],
+          "base": [
+            "VANILLA",
+            "CEDAR",
+            "AMBERGRIS",
+            "MUSK"
+          ]
+        }
+    },
+    {
+        "name": "Miss Dior",
+        "brand": "Dior",
+        "molecules": [
+          "ALCOHOL",
+          "WATER",
+          "LINALOOL",
+          "LIMONENE",
+          "BENZYL SALICYLATE",
+          "COUMARIN",
+          "CITRONELLOL",
+          "DIPROPYLENE GLYCOL",
+          "GERANIOL",
+          "HEXYL CINNAMAL",
+          "DIETHYLAMINO HYDROXYBENZOYL HEXYL BENZOATE",
+          "CITRAL",
+          "BENZYL BENZOATE",
+          "BENZYL ALCOHOL",
+          "EUGENOL",
+          "BUTYL METHOXYDIBENZOYLMETHANE"
+        ],
+        "notes": {
+          "top": [
+            "MANDARIN",
+            "BERGAMOT",
+            "LEMON"
+          ],
+          "heart": [
+            "ROSE",
+            "PEACH",
+            "NEROLI",
+            "JASMINE",
+            "GREEN NOTE",
+            "GARDENIA",
+            "PINEAPPLE",
+            "STRAWBERRY"
+          ],
+          "base": [
+            "PATCHOULI",
+            "WHITE MUSK",
+            "LABDANUM",
+            "CARAMEL"
+          ]
+        }
+    },  
+    {
+        "name": "N°5",
+        "brand": "Chanel",
+        "molecules": [
+          "ALCOHOL",
+          "WATER",
+          "PARFUM (FRAGRANCE)",
+          "BENZYL ALCOHOL",
+          "BENZYL BENZOATE",
+          "BENZYL CINNAMATE",
+          "BENZYL SALICYLATE",
+          "CINNAMYL ALCOHOL",
+          "CITRAL",
+          "CITRONELLOL",
+          "COUMARIN",
+          "EUGENOL",
+          "FARNESOL",
+          "GERANIOL",
+          "HYDROXYCITRONELLAL",
+          "ISOEUGENOL",
+          "LIMONENE",
+          "LINALOOL",
+          "ALPHA-ISOMETHYL IONONE",
+          "BUTYL METHOXYDIBENZOYLMETHANE"
+        ],
+        "notes": {
+          "top": [
+            "ALDEHYDES",
+            "NEROLI",
+            "LEMON"
+          ],
+          "heart": [
+            "ROSE",
+            "JASMINE",
+            "YLANG-YLANG"
+          ],
+          "base": [
+            "VETIVER",
+            "VANILLA",
+            "IRIS"
+          ]
+        }
+    },
+    {
+        "name": "Nina",
+        "brand": "Nina Ricci",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA (WATER)",
+            "LIMONENE",
+            "LINALOOL",
+            "BENZYL ALCOHOL",
+            "GERANIOL",
+            "FARNESOL",
+            "BENZYL BENZOATE",
+            "CITRAL",
+            "COUMARIN",
+            "EUGENOL",
+            "CITRONELLOL",
+            "HYDROXYCITRONELLAL",
+            "CINNAMAL"
+        ],
+        "notes": {
+            "top": [
+                "apple trio",
+                "lemon"
+            ],
+            "heart": [
+                "gardenia",
+                "orange blossom"
+            ],
+            "base": [
+                "amber wood",
+                "vanilla"
+            ]
+        }
+    },
+    {
+        "name": "Opium",
+        "brand": "Yves Saint Laurent",
+        "molecules": [
+            "ALCOHOL",
+            "PARFUM / FRAGRANCE",
+            "AQUA / WATER",
+            "LIMONENE",
+            "LINALOOL",
+            "ETHYLHEXYL SALICYLATE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "ALPHA-ISOMETHYL IONONE",
+            "CITRAL",
+            "CITRONELLOL",
+            "GERANIOL",
+            "COUMARIN",
+            "SODIUM HYDROXIDE"
+        ],
+        "notes": {
+            "top": [
+                "Mandarin",
+                "Aldehydes",
+                "Orange",
+                "Coriander"
+            ],
+            "heart": [
+                "Cinnamon",
+                "Rose",
+                "Jasmine",
+                "Clove",
+                "Plum",
+                "Ylang-Ylang"
+            ],
+            "base": [
+                "Benzoin",
+                "Patchouli",
+                "Vanilla",
+                "Myrrh",
+                "Labdanum",
+                "Opopanax"
+            ]
+        }
+    },
+    {
+        "name": "Shalimar",
+        "brand": "Guerlain",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA (WATER)",
+            "LIMONENE",
+            "LINALOOL",
+            "COUMARIN",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "CITRONELLOL",
+            "HYDROXYCITRONELLAL",
+            "GERANIOL",
+            "ALPHA-ISOMETHYL IONONE",
+            "CITRAL",
+            "BENZYL BENZOATE",
+            "EUGENOL",
+            "CINNAMAL",
+            "BENZYL ALCOHOL",
+            "TOCOPHEROL"
+        ],
+        "notes": {
+            "top": [
+                "Bergamot",
+                "Lemon"
+            ],
+            "heart": [
+                "Rose",
+                "Jasmine"
+            ],
+            "base": [
+                "Patchouli",
+                "Vanilla",
+                "Iris",
+                "Tonka bean",
+                "Opopanax",
+                "Vanillin"
+            ]
+        }
+    },
+    {
+        "name": "Si",
+        "brand": "Armani",
+        "molecules": [
+            "ALCOHOL",
+            "AQUA / WATER",
+            "BENZYL SALICYLATE",
+            "BENZYL ALCOHOL",
+            "ETHYLHEXYL METHOXYCINNAMATE",
+            "LINALOOL",
+            "LIMONENE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "ETHYLHEXYL SALICYLATE",
+            "HYDROXYCITRONELLAL",
+            "HEXYL CINNAMAL",
+            "GERANIOL",
+            "CINNAMYL ALCOHOL",
+            "BHT",
+            "ALPHA-ISOMETHYL IONONE",
+            "CITRONELLOL",
+            "EUGENOL",
+            "CITRAL",
+            "BENZYL BENZOATE",
+            "FARNESOL",
+            "COUMARIN"
+        ],
+        "notes": {
+            "top": [
+                "Bergamot"
+            ],
+            "heart": [
+                "Rose",
+                "Jasmine",
+                "Strawberry"
+            ],
+            "base": [
+                "Oakmoss",
+                "Patchouli"
+            ]
+        }
+    },
+    {
+        "name": "Terre d'Hermès",
+        "brand": "Hermès",
+        "molecules" : [
+            "ALCOHOL",
+            "WATER",
+            "ETHYLHEXYL METHOXYCINNAMATE",
+            "LIMONENE",
+            "CITRONELLOL",
+            "HEXYL CINNAMAL",
+            "HYDROXYCITRONELLAL",
+            "LINALOOL",
+            "ETHYLHEXYL SALICYLATE",
+            "BUTYL METHOXYDIBENZOYLMETHANE",
+            "EVERNIA PRUNASTRI EXTRACT",
+            "GERANIOL",
+            "CITRAL",
+            "BENZYL BENZOATE"
+        ],
+        "notes" : {
+            "top" : [
+                "GRAPEFRUIT",
+                "BERGAMOT",
+                "PINK BERRIES"
+            ],
+            "middle" : [
+                "BLACK PEPPER",
+                "GERANIUM",
+                "HEDIONE"
+            ],
+            "base" : [
+                "BENZOIN",
+                "VETIVER",
+                "ISO E SUPER",
+                "CEDARWOOD"
+            ]
+        }
+    }
+    
+   
+]
