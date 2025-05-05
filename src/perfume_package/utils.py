@@ -2,6 +2,7 @@ import requests
 import matplotlib.pyplot as plt
 import numpy as np
 import re
+import math
 
 def has_a_smell(smiles):
     try:
@@ -79,6 +80,7 @@ def is_toxic_skin(smiles):
         print(f"Unexpected error : {e}")
         return False
     
+
 def evaporation_trace(smiles):
     try:
         r = requests.get(f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{smiles}/cids/JSON")
@@ -91,18 +93,33 @@ def evaporation_trace(smiles):
         sections = data.get("Record", {}).get("Section", [])
 
         vapor_pressure_value = None
-        vapor_pressure_temp= None
+        vapor_pressure_temp = None
         vapor_pressure_unit = None
         found_vapor_pressure = False
         boiling_point = None
         fallback_celsius = None
+        enthalpy_vap = None
 
         def parse_sections(sections):
-            nonlocal vapor_pressure_value,vapor_pressure_temp,vapor_pressure_unit,found_vapor_pressure
-            nonlocal boiling_point, fallback_celsius
+            nonlocal vapor_pressure_value, vapor_pressure_temp, vapor_pressure_unit, found_vapor_pressure
+            nonlocal boiling_point, fallback_celsius, enthalpy_vap
 
             for section in sections:
                 heading = section.get("TOCHeading", "").lower()
+
+                if any(keyword in heading for keyword in ["enthalpy", "heat", "vaporization", "evaporation"]):
+                    for info in section.get("Information", []):
+                        string_list = info.get("Value", {}).get("StringWithMarkup", [])
+                        for item in string_list:
+                            text = item.get("String", "").lower()
+                            match_enthalpy = re.search(r"([\d\.]+)\s*(kj/mol|j/mol)", text)
+                            if match_enthalpy:
+                                try:
+                                    h_val = float(match_enthalpy.group(1))
+                                    unit = match_enthalpy.group(2)
+                                    enthalpy_vap = h_val * 1000 if "kj" in unit else h_val
+                                except:
+                                    continue
 
                 if "vapor pressure" in heading:
                     for info in section.get("Information", []):
@@ -114,7 +131,7 @@ def evaporation_trace(smiles):
                             pressure = float(match_pressure.group(1))
                             unit = match_pressure.group(2)
                             if unit == "kpa":
-                                pressure *=7.50062
+                                pressure *= 7.50062
                             elif unit == "pa":
                                 pressure /= 133.322
                             temp = None
@@ -123,10 +140,9 @@ def evaporation_trace(smiles):
                                 t_unit = match_temp.group(2)
                                 temp = t_val if t_unit == "c" else (t_val - 32) * 5 / 9
                             vapor_pressure_value = pressure
-                            vapor_pressure_temp=temp if temp is not None else 25
+                            vapor_pressure_temp = temp if temp is not None else 25
                             vapor_pressure_unit = "mmHg"
                             found_vapor_pressure = True
-                            return
 
                 if "boiling point" in heading:
                     for info in section.get("Information", []):
@@ -144,54 +160,56 @@ def evaporation_trace(smiles):
                             except:
                                 continue
 
-                parse_sections(section.get("Section", []))
+                if "Section" in section:
+                    parse_sections(section["Section"])
 
         parse_sections(sections)
 
 
-        if boiling_point is None and fallback_celsius is not None:
-            boiling_point= fallback_celsius
         
-        if boiling_point is None:
-            print ("None boiling point found")
-            return
-        else :
-            print (f"The boiling point is {boiling_point}°C ")
+        time = np.linspace(0, 25, 300)
+        if enthalpy_vap and vapor_pressure_value and vapor_pressure_temp:
+            R = 8.314
+            T = vapor_pressure_temp + 273.15
+            ln_P = math.log(vapor_pressure_value)
+            C = ln_P + (enthalpy_vap / (R * T))
 
-        if vapor_pressure_value is None:
-            print("None vapor pressure found.")
-            return
-        
-        if vapor_pressure_value is not None:
-            time = np.linspace(0, 25, 300)
-            k = 0.1
-            evap_rate = np.exp(-k * time / vapor_pressure_value)
+            def P(T_kelvin):
+                return np.exp(C - enthalpy_vap / (R * T_kelvin))
+
+            temp_curve = np.linspace(298, 318, len(time))
+            pressures = P(temp_curve)
+            evap_rate = np.exp(-0.05 * time / pressures)
+            evap_rate /= evap_rate[0]
+
+            plt.figure(figsize=(10, 5))
+            plt.plot(time, evap_rate, label="Model with Clausius-Clapeyron", color="green")
+            plt.xlabel("Time (hours)")
+            plt.ylabel("Relative concentration")
+            plt.title("Evaporation curve based on vapor pressure")
+            plt.grid(True)
+            plt.legend()
+            plt.show()
+
+        elif boiling_point:
+            evap_rate = np.exp(-0.2 * time / (boiling_point / 10))
             evap_rate /= evap_rate[0]
             plt.figure(figsize=(10, 5))
-            plt.plot(time, evap_rate, label=f"Evaporation - Pvap =  {vapor_pressure_value:.2f} mmHg at {vapor_pressure_temp}°C", color = 'blue')
+            plt.plot(time, evap_rate, label=f"Fallback model - Tb = {boiling_point:.1f} °C", color="blue")
             plt.title("Estimated evaporation curve")
             plt.xlabel("Time (hours)")
             plt.ylabel("Relative concentration")
             plt.grid(True)
             plt.legend()
             plt.show()
-        elif boiling_point is not None : 
-            time = np.linspace(0, 25, 300)
-            k = 0.2
-            evap_rate = np.exp(-k * time / (boiling_point/10))
-            evap_rate /= evap_rate[0]
-            plt.figure(figsize=(10, 5))
-            plt.plot(time, evap_rate, label=f"Evaporation estimated - Teb = {boiling_point:.1f} °C ", color = 'green')
-            plt.title("Estimated evaporation curve")
-            plt.xlabel("Time (hours)")
-            plt.ylabel("Relative concentration")
-            plt.grid(True)
-            plt.legend()
-            plt.show()
-        else : 
-            print ("Insufficient data to plot the evaporation curve")
+
 
     except Exception as e:
-        print(f"Error : {e}")
+        print(f"❌ Error : {e}")
+    return vapor_pressure_value, boiling_point,vapor_pressure_temp, enthalpy_vap
+
+
+
+
 
 

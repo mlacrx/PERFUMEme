@@ -30,5 +30,9 @@
   {
     "name": "3,5-Dimethyl-3-cyclohexene carboxaldehyde",
     "smiles": "CC1CC(CC(=C1)C)C=O"
+  },
+  {
+    "name": "Limonene",
+    "smiles": "CC1=CCC(CC1)C(=C)C"
   }
 ]

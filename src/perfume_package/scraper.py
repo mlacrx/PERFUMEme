@@ -42,4 +42,5 @@ def add_molecule(compound_name):
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    add_molecule("3,5-Dimethyl-3-cyclohexene carboxaldehyde")  # You can change this to any compound name
+    add_molecule("Limonene")  # You can change this to any compound name
+
