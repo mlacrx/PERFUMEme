@@ -1,13 +1,13 @@
 import numpy as np
-from .utils import has_a_smell, is_toxic_skin, evaporation_trace
+from .main_fonctions import has_a_smell, is_toxic_skin, evaporation_trace
 
 def usable_in_perfume(smiles: str):
     
     if not has_a_smell(smiles):
-        return "❌ The molecule has no detectable smell — not suitable for perfumery.", None
+        return "❌ The molecule has no detectable smell.", None
     
     if not is_toxic_skin(smiles):
-        return "❌ The molecule is not safe for skin contact — not suitable for perfumery.", None
+        return "❌ The molecule is not safe for skin contact if present in large quantity.", None
 
     vapor_pressure_value, boiling_point,vapor_pressure_temp = evaporation_trace(smiles)
 
