@@ -23,7 +23,7 @@ def add_molecule(compound_name):
     
     try:
         smiles = get_smiles(compound_name)
-        data.append({"name": compound_name, "smiles": smiles})
+        data.append({"name": compound_name.lower(), "smiles": smiles})
         save_data_smiles(data)
         print(f"Added {compound_name} with SMILES: {smiles}")
     except Exception as e:
@@ -54,7 +54,7 @@ def save_data_odor(data):
 def add_odor_to_molecules():
     data = load_data_odor()
     for entry in data:
-        if "odor" not in entry:  # Skip if odor information is already present
+        if "odor" not in entry:
             try:
                 odor = get_odor(entry["name"])
                 odor_list = [odor_item.strip() for odor_item in odor.split(";")]

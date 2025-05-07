@@ -27,7 +27,7 @@
     ]
   },
   {
-    "name": "Hydroquinone",
+    "name": "hydroquinone",
     "smiles": "C1=CC(=CC=C1O)O",
     "odor": [
       "astringent",
@@ -35,11 +35,11 @@
     ]
   },
   {
-    "name": "Ambroxan",
+    "name": "ambroxan",
     "smiles": "C[C@]12CCCC([C@@H]1CC[C@@]3([C@@H]2CCO3)C)(C)C"
   },
   {
-    "name": "Linalool",
+    "name": "linalool",
     "smiles": "CC(=CCCC(C)(C=C)O)C",
     "odor": [
       "berry",
@@ -62,15 +62,15 @@
     ]
   },
   {
-    "name": "Hedione",
+    "name": "hedione",
     "smiles": "CCCCCC1C(CCC1=O)CC(=O)OC"
   },
   {
-    "name": "3,5-Dimethyl-3-cyclohexene carboxaldehyde",
+    "name": "3,5-dimethyl-3-cyclohexene carboxaldehyde",
     "smiles": "CC1CC(CC(=C1)C)C=O"
   },
   {
-    "name": "Limonene",
+    "name": "limonene",
     "smiles": "CC1=CCC(CC1)C(=C)C",
     "odor": [
       "aromatic",
@@ -93,11 +93,11 @@
     ]
   },
   {
-    "name": "ALCOHOL",
+    "name": "alcohol",
     "smiles": "CCO"
   },
   {
-    "name": "GERANIOL",
+    "name": "geraniol",
     "smiles": "CC(=CCC/C(=C/CO)/C)C",
     "odor": [
       "apple",
@@ -565,26 +565,26 @@
     "smiles": "[OH-].[Na+]"
   },
   {
-    "name": "Diethylene Glycol Monoethyl Ether",
+    "name": "diethylene glycol monoethyl ether",
     "smiles": "CCOCCOCCO",
     "odor": [
       "ethereal"
     ]
   },
   {
-    "name": "Butylene glycol dicaprate",
+    "name": "butylene glycol dicaprate",
     "smiles": "CCCCCCCCCC(=O)OCCC(C)OC(=O)CCCCCCCCC"
   },
   {
-    "name": "Dipropylene glycol caprylate",
+    "name": "dipropylene glycol caprylate",
     "smiles": "CCCCCCCC(=O)OC(C)COCC(C)O"
   },
   {
-    "name": "Cetyl PEG/PPG-10/1 dimethicone",
+    "name": "cetyl PEG/PPG-10/1 dimethicone",
     "smiles": "CCCCCCCCCCCCCCCC[Si](C)(O[Si](C)(C)OCCOCC(C)O)O[Si](C)(C)O[Si](C)(C)C"
   },
   {
-    "name": "Acetylated glycol stearate",
+    "name": "acetylated glycol stearate",
     "smiles": "CCCCCCCCCCCCCCCCCC(=O)OCCOC(=O)C"
   },
   {
