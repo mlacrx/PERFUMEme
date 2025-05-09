@@ -1,9 +1,32 @@
 import numpy as np
 import matplotlib as plt
-from .main_fonctions import has_a_smell, is_toxic_skin, evaporation_trace
+from .main_functions import has_a_smell, is_toxic_skin, evaporation_trace
 
 
 def usable_in_perfume(smiles_or_name: str):
+    """
+    Evaluates whether a molecule is suitable for use in perfume formulations.
+
+    This function checks three main criteria: whether the molecule has an odor, whether it is safe for dermal 
+    exposure, and whether its volatility is appropriate for perfumery. It uses vapor pressure data (or boiling 
+    point as a fallback) to determine the note classification (top, heart, or base). A graph of the evaporation 
+    curve is generated and annotated with the note type.
+
+    Args:
+        smiles_or_name (str): The SMILES string or compound name.
+
+    Returns:
+        tuple:
+            - msg (str): A summary string indicating perfume suitability, note classification, and safety.
+            - annotated_path (str or None): File path to the saved annotated evaporation curve image, or None 
+              if no plot was generated.
+    
+    Notes:
+        - Uses `has_a_smell`, `is_toxic_skin`, and `evaporation_trace` from the package.
+        - Evaporation note classification is based on vapor pressure extrapolated to 37°C (body temperature).
+        - If vapor pressure data is missing, boiling point is used to estimate volatility.
+        - The resulting plot is saved and optionally annotated with note classification.
+    """
     smell_ok = has_a_smell(smiles_or_name)
     toxicity_ok = is_toxic_skin(smiles_or_name)
 
@@ -42,18 +65,17 @@ def usable_in_perfume(smiles_or_name: str):
                 note_type = "base note"
             volatility_comment = f"Estimated from boiling point: **{note_type}**."
 
-
         if plot_path:
             img = plt.imread(plot_path)
-            fig, ax = plt.subplots(figsize=(10, 5))
+            fig, ax = plt.subplots()
             ax.imshow(img)
             ax.axis('off')
             note_display = f"Note: {note_type.upper()}"
-            ax.text(0.05, 0.9, note_display, transform=ax.transAxes,
-                    fontsize=14, fontweight='bold', color='darkblue',
-                    bbox=dict(facecolor='white', alpha=0.6, edgecolor='none'))
-            annotated_path = plot_path.replace(".png", "_annotated.png")
-            plt.savefig(annotated_path, bbox_inches='tight')
+            ax.text(0.05,0.9, note_display, transform=ax.transAxes,
+                    fontsize = 14, fontweight='bold', color = 'darkblue',
+                    bbox = dict(facecolor = 'white', alpha=0.6, edgecolor = 'none'))
+            annotated_path = plot_path.replace(".png","_annotated.png")
+            plt.savefig(annotated_path, bbox_inches = 'tight')
             plt.close()
         else:
             annotated_path = None
