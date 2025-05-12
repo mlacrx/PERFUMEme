@@ -30,7 +30,7 @@ def has_a_smell(compound_name_or_smiles):
         description = entry.get("Description", "").lower()
         if any(keyword in description for keyword in ["odor", "odour", "fragrance", "aroma", "scent", "smell"]):
             return True
-        return False
+    return False
 
 def is_toxic_skin(compound_name_or_smiles):
     """
@@ -69,7 +69,7 @@ def is_toxic_skin(compound_name_or_smiles):
     
     return look_toxicity_skin(sections)
     
-
+print (is_toxic_skin("benzene"))
 def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporation_curve.png"):
     """
     Computes and plots the evaporation curve of a molecule using either Clausius-Clapeyron equation or a fallback model.

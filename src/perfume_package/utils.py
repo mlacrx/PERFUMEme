@@ -4,6 +4,7 @@ from pathlib import Path
 import pandas as pd
 
 
+
 def get_smiles(compound_name): # Constructs a URL to get SMILES for a given compound name.
     """
     Retrieves the SMILES (Simplified Molecular Input Line Entry System) string for a given compound name 
@@ -101,9 +102,10 @@ def get_cid_from_smiles(smiles):
     Raises:
         Exception: If the request fails or if no CID is found for the SMILES input.
     """
-
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{smiles}/cids/JSON"
-    response = requests.get(url)
+    
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/JSON"
+    data={"smiles":smiles}
+    response = requests.post(url, data=data)
     response.raise_for_status()
     cids = response.json().get("IdentifierList", {}).get("CID", [])
     if not cids:
