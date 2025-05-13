@@ -1,8 +1,8 @@
-<img width="830" alt="logo" src="https://github.com/mlacrx/PERFUMEme/blob/main/assets/banner.png">
+<img width="700" alt="logo" src="https://github.com/mlacrx/PERFUMEme/blob/main/assets/banner.png">
 
 [![GitHub](https://img.shields.io/badge/github-%2395c5c6.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mlacrx/PERFUMEme)
-[![Python](https://img.shields.io/badge/Python-%23fcd2de?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Jupyter](https://img.shields.io/badge/Jupyter-%23b39eb5.svg?&style=for-the-badge&logo=Jupyter&logoColor=white)] (https://jupyter.org/)
+[![](https://img.shields.io/badge/Python-%23fcd2de?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![](https://img.shields.io/badge/Jupyter-%23b39eb5.svg?&style=for-the-badge&logo=Jupyter&logoColor=white)](https://jupyter.org/)
 
 # -         PERFUMEme      - 
 
@@ -24,8 +24,18 @@ Creators :
 - Coline Lepers, student in chemistry at EPFL  [![jhc github](https://img.shields.io/badge/GitHub-clepers-181717.svg?style=flat&logo=github&logoColor=pink)](https://github.com/clepers) 
 
 
-
 ## ⚒️ Installation 
+
+[![](https://img.shields.io/badge/pypi-%23FAC898?style=for-the-badge&logo=pypi&logoColor=black)](https://pypi.org/project/perfumeme/)
+
+PERFUMEme can be installed using pip as
+```bash
+pip install perfumeme
+```
+[![GitHub](https://img.shields.io/badge/github-%2395c5c6.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mlacrx/PERFUMEme)
+
+As an alternative, the package can be installed directly from the GitHub repository by executing the following pip command in your terminal:
+
 
 
 
