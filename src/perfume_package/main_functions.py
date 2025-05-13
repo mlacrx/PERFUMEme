@@ -51,7 +51,7 @@ def is_toxic_skin(compound_name_or_smiles):
     """
 
     smiles, cid = resolve_input_to_smiles_and_cid(compound_name_or_smiles)
-    sections = get_pubchem_description(cid)
+    sections = get_pubchem_record_sections(cid)
     
     def look_toxicity_skin (sections):
         for section in sections:
@@ -68,8 +68,8 @@ def is_toxic_skin(compound_name_or_smiles):
         return False
     
     return look_toxicity_skin(sections)
-    
-print (is_toxic_skin("benzene"))
+  
+
 def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporation_curve.png"):
     """
     Computes and plots the evaporation curve of a molecule using either Clausius-Clapeyron equation or a fallback model.
