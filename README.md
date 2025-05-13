@@ -1,8 +1,8 @@
-![Project Logo](assets/banner.png)
+<img width="830" alt="logo" src="https://github.com/mlacrx/PERFUMEme/blob/main/assets/banner.png">
 
 [![GitHub](https://img.shields.io/badge/github-%2395c5c6.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mlacrx/PERFUMEme)
-[![Python](https://img.shields.io/badge/Python-%23fcd2de?style=for-the-badge&logo=python&logoColor=white)] (https://www.python.org/)
-![Jupyter](https://img.shields.io/badge/Jupyter-%23b39eb5.svg?&style=for-the-badge&logo=Jupyter&logoColor=white)
+[![Python](https://img.shields.io/badge/Python-%23fcd2de?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-%23b39eb5.svg?&style=for-the-badge&logo=Jupyter&logoColor=white)] (https://jupyter.org/)
 
 # -         PERFUMEme      - 
 
@@ -10,9 +10,24 @@
 [![](https://img.shields.io/badge/Contributors-3-purple.svg)](https://github.com/mlacrx/PERFUMEme/graphs/contributors)
 [![](https://img.shields.io/badge/License-MIT-pink.svg)](https://github.com/mlacrx/PERFUMEme/blob/main/LICENSE)
 
-PERFUMEme is a Python package designed to evaluate the suitability of molecules for use in perfumes. Combining cheminformatics, volatility modeling, and cosmetic safety criteria, it helps determine whether a compound has an odor, is safe for skin contact, and evaporates at a rate consistent with fragrance formulation (top, heart, or base note).
+ - Python Package for analysis of odorous molecules giving main properties
+
+## ⚛️  Package description
+
+PERFUMEme is a Python package designed to evaluate the suitability of molecules for use in perfumes. Combining cheminformatics, volatility modeling, and cosmetic safety criteria, it helps determine whether a compound has an odor, is safe for skin contact, and evaporates at a rate consistent with fragrance formulation (top, heart, or base note). It also tells in which famous perfumes the molecule is present.
 
 Whether you're a fragrance formulator, a cosmetic chemist, or simply curious about scent molecules, PERFUMEme brings together data from PubChem and evaporation theory to support informed and creative olfactory design.
+
+Creators : 
+- Marie Lacroix, student in chemistry at EPFL [![jhc github](https://img.shields.io/badge/GitHub-mlacrx-181717.svg?style=flat&logo=github&logoColor=pink)](https://github.com/mlacrx) 
+- Lilia Cretegny, student in chemistry at EPFL [![jhc github](https://img.shields.io/badge/GitHub-lilia--crtny-181717.svg?style=flat&logo=github&logoColor=pink)](https://github.com/lilia-crtny) 
+- Coline Lepers, student in chemistry at EPFL  [![jhc github](https://img.shields.io/badge/GitHub-clepers-181717.svg?style=flat&logo=github&logoColor=pink)](https://github.com/clepers) 
+
+
+
+## ⚒️ Installation 
+
+
 
 ## 🔥 Usage
 
