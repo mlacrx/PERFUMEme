@@ -24,84 +24,94 @@ Creators :
 - Coline Lepers, student in chemistry at EPFL  [![jhc github](https://img.shields.io/badge/GitHub-clepers-181717.svg?style=flat&logo=github&logoColor=pink)](https://github.com/clepers) 
 
 
-## ⚒️ Installation 
+## 🧑‍💻 Installation 
+
+Create a new environment, you can give an other name to this new environment. Then activate this environment
+```bash
+conda create -n fragrance python=3.10
+```
+```bash
+conda activate fragrance
+```
+As the PERFUMEme package is dedicated for usage in a Jupyter Lab, you should install Jupyter Lab by executing the following command.
+```bash
+pip install jupyter lab
+```
 
 [![](https://img.shields.io/badge/pypi-%23FAC898?style=for-the-badge&logo=pypi&logoColor=black)](https://pypi.org/project/perfumeme/)
 
-PERFUMEme can be installed using pip as
+PERFUMEme can be then installed using pip as
 ```bash
 pip install perfumeme
 ```
 [![GitHub](https://img.shields.io/badge/github-%2395c5c6.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mlacrx/PERFUMEme)
 
-As an alternative, the package can be installed directly from the GitHub repository by executing the following pip command in your terminal:
+As an alternative, the package can be installed directly from the GitHub repository by executing the following pip command in your terminal
+```bash
+pip install git+https://github.com/mlacrx/PERFUMEme
+```
 
+![](https://img.shields.io/badge/GIT-%23C6E5B1?style=for-the-badge&logo=git&logoColor=black)
+The package can also be installed from source by executing the following steps:
+First, clone the repository from GitHub and navigate into the project directory
+```bash
+git clone https://github.com/mlacrx/PERFUMEme.git
+cd path/to/perfumeme
+```
+Then, install the package in editable mode using:
+```bash
+pip install -e .
+```
 
+## 📖 Requirements
 
+The PERFUMEme package runs on python 3.10. 
+Its correct use requires several other packages.
+```bash
+rdkit
+pandas
+numpy
+matplotlib
+requests
+```
+
+If the installation completes successfully, all those required packages should be installed automatically.
+To verify that everything is correctly set up in your environment, you can list the installed packages by running the following command in your terminal:
+```bash
+conda list
+```
+
+If you don't see them, install them by running the following commands. You have to make sure they are installed, otherwise the package will not run.
+```bash
+pip install rdkit
+pip install pandas
+pip install numpy
+pip install matplotlib
+pip install requests
+```
 
 ## 🔥 Usage
 
-```python
-from mypackage import main_func
+As you may have gathered, the PERFUMEme package is destinated for usage in Jupyter Lab. 
+After installing the package and opening a Jupyter Notebook, you can use PERFUMEme to evaluate the olfactory and physicochemical profile of a molecule using its SMILES representation or its name.
 
-# One line to rule them all
-result = main_func(data)
-```
+This includes:
 
-This usage example shows how to quickly leverage the package's main functionality with just one line of code (or a few lines of code). 
-After importing the `main_func` (to be renamed by you), you simply pass in your `data` and get the `result` (this is just an example, your package might have other inputs and outputs). 
-Short and sweet, but the real power lies in the detailed documentation.
-
-## 👩‍💻 Installation
-
-Create a new environment, you may also give the environment a different name. 
-
-```
-conda create -n perfume_package python=3.10 
-```
-
-```
-conda activate perfume_package
-(conda_env) $ pip install .
-```
-
-If you need jupyter lab, install it 
-
-```
-(perfume_package) $ pip install jupyterlab
-```
+- Odor detectability
+- Skin toxicity
+- Evaporation modeling (vapor pressure, boiling point, vaporization enthalpy)
+- Evaporation curve plot
+- Perfume compatibility (note type)
+- Perfumes in which the molecule appears
 
 
-## 🛠️ Development installation
 
-Initialize Git (only for the first time). 
 
-Note: You should have create an empty repository on `https://github.com:mlacrx/perfume-package`.
 
-```
-git init
-git add * 
-git add .*
-git commit -m "Initial commit" 
-git branch -M main
-git remote add origin git@github.com:mlacrx/perfume-package.git 
-git push -u origin main
-```
 
-Then add and commit changes as usual. 
 
-To install the package, run
 
-```
-(perfume_package) $ pip install -e ".[test,doc]"
-```
 
-### Run tests and coverage
-
-```
-(conda_env) $ pip install tox
-(conda_env) $ tox
-```
 
 
 
