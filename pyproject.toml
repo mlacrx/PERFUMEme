@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "PERFUMEme"
+name = "perfumeme"
 readme = "README.md"
 requires-python = ">=3.8"
 description = "PERFUMEme is a pip-installable package for analysis of odorous molecules giving main properties. It checks if the molecule has a smell,is toxic for the skin and simulates its evaporation trace. Finally, it indicates in which famous perfumes the molecule is present and eventually its odor."
