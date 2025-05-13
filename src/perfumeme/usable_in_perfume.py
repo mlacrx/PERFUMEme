@@ -1,5 +1,6 @@
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 from .main_functions import has_a_smell, is_toxic_skin, evaporation_trace
 
 
@@ -28,7 +29,7 @@ def usable_in_perfume(smiles_or_name: str):
         - The resulting plot is saved and optionally annotated with note classification.
     """
     smell_ok = has_a_smell(smiles_or_name)
-    toxicity_ok = is_toxic_skin(smiles_or_name)
+    toxicity_ok = not is_toxic_skin(smiles_or_name)
 
     pvap, boiling_point, pvap_temp, enthalpy, plot_path = evaporation_trace(smiles_or_name)
 
@@ -66,7 +67,7 @@ def usable_in_perfume(smiles_or_name: str):
             volatility_comment = f"Estimated from boiling point: **{note_type}**."
 
         if plot_path:
-            img = plt.imread(plot_path)
+            img = mpimg.imread(plot_path)
             fig, ax = plt.subplots()
             ax.imshow(img)
             ax.axis('off')
