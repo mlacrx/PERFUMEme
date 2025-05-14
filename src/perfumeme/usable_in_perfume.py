@@ -40,7 +40,7 @@ def usable_in_perfume(smiles_or_name: str):
     else:
 
         pvap_37 = pvap * np.exp(-0.1 * (37 - pvap_temp)) if pvap and pvap_temp else None
-
+        
         if pvap_37:
             if pvap_37 > 100:
                 note_type = "too volatile"
@@ -71,13 +71,15 @@ def usable_in_perfume(smiles_or_name: str):
             fig, ax = plt.subplots()
             ax.imshow(img)
             ax.axis('off')
-            
-            note_display = f"Note: {note_type.upper()}"
+            if has_a_smell(smiles_or_name):
+                note_display = f"Note: {note_type.upper()}"
+            else:
+                note_display="No odor"
             ax.text(0.05,0.9, note_display, transform=ax.transAxes,
                     fontsize = 8, fontweight='bold', color = 'darkblue',
                     bbox = dict(facecolor = 'white', alpha=0.6, edgecolor = 'none'))
             annotated_path = plot_path.replace(".png","_annotated.png")
-            plt.savefig(annotated_path, bbox_inches = 'tight', dpi=300)
+            plt.savefig(annotated_path, bbox_inches = 'tight', dpi=500)
             plt.show()
             plt.close()
         else:
