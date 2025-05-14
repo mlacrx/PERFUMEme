@@ -34,18 +34,19 @@ def match_mol_to_odor(mol):
     
     mol_lower = mol.lower()
     
-    matched_odors = []
+    
     for molecule in molecules:
         if mol_lower == molecule.get("name", []).lower():
-            matched_odors.append(molecule.get("odor", []))
-            return molecule.get("odor")
+            if "odor" not in molecule:
+                return f"No odors found for this molecule."
+            else:
+                return molecule.get("odor")  
+    if mol not in molecule.get("name", []):
+        return f"Molecule not found."
+              
     
-    if matched_odors == []:
-        if mol not in molecule.get("name", []):
-            return f"Molecule not found."
-        else:
-            return f"No odors found for this molecule."
 
+    
 
 def combination(mol):
     """
