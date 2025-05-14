@@ -52,6 +52,7 @@ pip install git+https://github.com/mlacrx/PERFUMEme
 ```
 
 ![](https://img.shields.io/badge/GIT-%23C6E5B1?style=for-the-badge&logo=git&logoColor=black)
+
 The package can also be installed from source by executing the following steps:
 First, clone the repository from GitHub and navigate into the project directory
 ```bash
@@ -111,15 +112,87 @@ import perfumeme as pm
 
 mol = "Linalool"
 
-summary, plot_path = perfumeme.usable_in_perfume(mol)
+summary, plot_path = pm.usable_in_perfume(mol)
 print (summary)
 
-from IPython.display import Image
-Image(filename=plot_path)
+display(Image(filename=plot_path))
 ```
+
 The output of this first command will be : 
 
-<img width=500  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets>
+<img width=500  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
+
+Now you can find out the presence of your molecule in famous fragrances and extract olfactory information.
+
+```bash
+import perfumeme as pm
+
+mol = "Linalool"
+
+pm.combination(mol)
+```
+
+The output of this second command will be : 
+
+
+Now if you just want to obtain simple properties of the molecule (smell, toxic, vapor pressure, vapor pressure temperature, boiling point, enthalpy of vaporisation), you can use our small functions : has_a_smell, is_toxic_skin and evaporation_trace. 
+
+To have information on smell :
+
+```bash
+import perfumeme as pm
+
+mol = "Linalool"
+
+pm.has_a_smell(mol)
+```
+
+The output of this command will be: True.
+
+Information on toxicity : 
+
+```bash
+import perfumeme as pm
+
+mol = "Linalool"
+
+pm.is_toxic_skin(mol)
+```
+
+The output will be: True.
+
+Informations on physical properties : 
+
+```bash
+
+from perfumeme.main_functions import evaporation_trace
+
+molecule = "linalool"
+
+vapor_pressure, boiling_point, vp_temp, enthalpy, image_path = evaporation_trace(molecule)
+
+print(f"💨 Vapor Pressure: {vapor_pressure} mmHg")
+print(f"🔥 Boiling Point: {boiling_point} °C")
+print(f"🌡️ Vapor Pressure Measured at: {vp_temp} °C")
+print(f"⚡ Enthalpy of Vaporization: {enthalpy} J/mol")
+```
+
+The output will be : 
+
+"💨 Vapor Pressure: 0.16 mmHg"
+"🔥 Boiling Point: 194°C"
+"🌡️ Vapor Pressure Measured at: 23.5 °C"
+"⚡ Enthalpy of Vaporization: None J/mol"
+
+
+
+
+
+
+
+
+
+
 
 
 

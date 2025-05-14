@@ -108,26 +108,36 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         for section in sections:
             heading = section.get("TOCHeading", "").lower()
 
-            if any(k in heading for k in ["vapor pressure"]):
+            if "vapor pressure" in heading:
                 for info in section.get("Information", []):
                     val = info.get("Value", {})
-                    raw = val.get("StringWithMarkup", [{}])[0].get("String", "").lower()
-                    match_p = re.search(r"([\d\.eE-]+)\s*(mmhg|kpa|pa)", raw)
-                    match_t = re.search(r"at\s+([\d\.]+)\s*°?\s*([cf])", raw)
+                    raw = val.get("StringWithMarkup", [{}])[0].get("String", "")
+                    raw_lower = raw.lower()
+
+                    match_p = re.search(r"([\d\.,eE+-]+)\s*(mmhg|kpa|pa)", raw_lower)
+                    match_t = re.search(r"at\s+([\d\.,]+)\s*°?\s*([cf])", raw_lower)
+
                     if match_p:
-                        pressure = float(match_p.group(1))
-                        unit = match_p.group(2)
-                        if unit == "kpa":
-                            pressure *= 7.50062
-                        elif unit == "pa":
-                            pressure /= 133.322
-                        temp = None
+                        try:
+                            pressure = float(match_p.group(1).replace(",", ""))
+                            unit = match_p.group(2)
+                            if unit == "kpa":
+                                pressure *= 7.50062
+                            elif unit == "pa":
+                                pressure /= 133.322
+                            vapor_pressure_value = pressure
+                        except ValueError:
+                            continue
+
                         if match_t:
-                            t_val = float(match_t.group(1))
-                            t_unit = match_t.group(2)
-                            temp = t_val if t_unit == "c" else (t_val - 32) * 5 / 9
-                        vapor_pressure_value = pressure
-                        vapor_pressure_temp = temp if temp is not None else 25
+                            try:
+                                t_val = float(match_t.group(1).replace(",", ""))
+                                t_unit = match_t.group(2)
+                                vapor_pressure_temp = t_val if t_unit == "c" else (t_val - 32) * 5 / 9
+                            except ValueError:
+                                vapor_pressure_temp = 25
+                        else:
+                            vapor_pressure_temp = 25
 
             if "boiling point" in heading:
                 for info in section.get("Information", []):
