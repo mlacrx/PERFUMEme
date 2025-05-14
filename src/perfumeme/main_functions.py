@@ -187,6 +187,9 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
     else:
         print("⚠️ Not enough data to calculate evaporation curve.")
         return None, None, None, None, None
+    
+    fig, ax = plt.subplots()
+    ax.grid(False)
 
     plt.xlabel("Time (hours)")
     plt.ylabel("Relative Concentration")

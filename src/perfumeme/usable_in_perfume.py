@@ -71,12 +71,14 @@ def usable_in_perfume(smiles_or_name: str):
             fig, ax = plt.subplots()
             ax.imshow(img)
             ax.axis('off')
+            ax.grid(False)
             note_display = f"Note: {note_type.upper()}"
             ax.text(0.05,0.9, note_display, transform=ax.transAxes,
-                    fontsize = 14, fontweight='bold', color = 'darkblue',
+                    fontsize = 11, fontweight='bold', color = 'darkblue',
                     bbox = dict(facecolor = 'white', alpha=0.6, edgecolor = 'none'))
             annotated_path = plot_path.replace(".png","_annotated.png")
-            plt.savefig(annotated_path, bbox_inches = 'tight')
+            plt.savefig(annotated_path, bbox_inches = 'tight', dpi=300)
+            plt.show()
             plt.close()
         else:
             annotated_path = None

@@ -1,4 +1,4 @@
-from src.perfumeme.utils import resolve_input_to_smiles_and_cid , get_odor
+from .perfumeme.utils.py import resolve_input_to_smiles_and_cid , get_odor
 import pandas as pd
 import pytest 
 
@@ -32,7 +32,7 @@ def test_get_odor(monkeypatch):
     })
 
     # Patch the global df inside your module
-    monkeypatch.setattr(src.perfumeme.utils, "df", fake_df)
+    monkeypatch.setattr(perfumeme.utils.py, "df", fake_df)
 
     # Now test normally
     result = get_odor("citronellol")
