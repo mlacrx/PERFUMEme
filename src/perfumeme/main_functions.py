@@ -71,28 +71,11 @@ def is_toxic_skin(compound_name_or_smiles):
   
 
 def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporation_curve.png"):
-    """
-    Computes and plots the evaporation curve of a molecule using either Clausius-Clapeyron equation or a fallback model.
+    import re
+    import math
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-    This function takes a compound name or SMILES string, retrieves vapor pressure, boiling point, and enthalpy of 
-    vaporization data from PubChem, and then simulates the molecule's evaporation rate over time. The resulting 
-    curve is saved as a PNG file.
-
-    Args:
-        smiles_or_name (str): The SMILES string or compound name.
-        save_path (str, optional): Path to save the evaporation curve image. Default is "evaporation_curve.png".
-
-    Returns:
-        tuple:
-            - vapor_pressure_value (float or None): Vapor pressure in mmHg.
-            - boiling_point (float or None): Boiling point in °C.
-            - vapor_pressure_temp (float or None): Temperature at which vapor pressure is measured (°C).
-            - enthalpy_vap (float or None): Enthalpy of vaporization in J/mol.
-            - save_path (str or None): Path to the saved plot file if successful, else None.
-
-    Raises:
-        Exception: If any API call fails or if the data structure is unexpected.
-    """
     smiles, cid = resolve_input_to_smiles_and_cid(compound_name_or_smiles)
     sections = get_pubchem_record_sections(cid)
 
@@ -107,36 +90,53 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
 
         for section in sections:
             heading = section.get("TOCHeading", "").lower()
-  
-            for info in section.get("Information", []):
-                val = info.get("Value", {})
-                raw = val.get("StringWithMarkup", [{}])[0].get("String", "").lower()
-                if any(unit in raw for unit in ["mmhg","kpa","pa"]):
-                    match_p = re.search(r"([\d\.,eE+-]+)\s*(?:\[)?\s*(mmhg|kpa|pa)\s*(?:\])?", raw)
-                    match_t = re.search(r"at\s+([\d\.,]+)\s*°?\s*([cf])", raw)
-                    if match_p:
-                        try:
-                            pressure = float(match_p.group(1).replace(",",""))
-                            unit = match_p.group(2)
-                            if unit == "kpa":
-                                pressure *= 7.50062
-                            elif unit == "pa":
-                                pressure /= 133.322
-                            vapor_pressure_value = pressure
-                        except:
-                            continue
-            
-                        if match_t:
+
+            # 🔍 VAPOR PRESSURE – recherche ciblée
+            if "vapor pressure" in heading:
+                for info in section.get("Information", []):
+                    val = info.get("Value", {})
+                    strings = [s.get("String", "") for s in val.get("StringWithMarkup", [])]
+
+                    for raw in strings:
+                        raw_lower = raw.lower()
+
+                        # Extraction de plusieurs pressions dans une même chaîne
+                        matches = re.findall(
+                            r"([\d\.,eE+-]+)\s*(?:\[)?\s*(mmhg|kpa|pa)\s*(?:\])?(?:\s*(?:at)?\s*([\d\.,]+)?\s*°?\s*([cf]))?",
+                            raw_lower
+                        )
+
+                        for match in matches:
+                            if vapor_pressure_value is not None:
+                                break  # première valeur seulement
+
+                            val_str, unit, temp_str, temp_unit = match
+
                             try:
-
-                                t_val = float(match_t.group(1).replace(",",""))
-                                t_unit = match_t.group(2)
-                                vapor_pressure_temp=t_val if t_unit == "c" else (t_val-32)*5/9
+                                pressure = float(val_str.replace(",", ""))
+                                if pressure >= 100:
+                                    continue  # éviter les 760 mmHg typiques de conditions de mesure
+                                if unit == "kpa":
+                                    pressure *= 7.50062
+                                elif unit == "pa":
+                                    pressure /= 133.322
+                                vapor_pressure_value = pressure
                             except:
-                                vapor_pressure_temp = 25
-                        else:
-                            vapor_pressure_temp = 25
+                                continue
 
+                            if temp_str and temp_unit:
+                                try:
+                                    temp = float(temp_str.replace(",", ""))
+                                    vapor_pressure_temp = temp if temp_unit == "c" else int ((temp - 32) * 5 / 9)
+                                except:
+                                    vapor_pressure_temp = 25
+                            else:
+                                vapor_pressure_temp = 25
+
+                        if vapor_pressure_value is not None:
+                            break
+
+            # 🔍 BOILING POINT
             if "boiling point" in heading:
                 for info in section.get("Information", []):
                     val = info.get("Value", {}).get("StringWithMarkup", [{}])[0].get("String", "").lower()
@@ -153,15 +153,24 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
                         except:
                             continue
 
+            # 🔍 ENTHALPY OF VAPORIZATION
             if any(k in heading for k in ["enthalpy", "heat", "vaporization", "evaporation"]):
                 for info in section.get("Information", []):
                     for item in info.get("Value", {}).get("StringWithMarkup", []):
                         text = item.get("String", "").lower()
-                        match_h = re.search(r"([\d\.]+)\s*(kj/mol|j/mol)", text)
+                        match_h = re.search(r"([\d\.]+)\s*(kj/mol|j/mol|kcal/mole)", text)
                         if match_h:
                             val = float(match_h.group(1))
-                            enthalpy_vap = val * 1000 if "kj" in match_h.group(2) else val
+                            unit = match_h.group(2)
 
+                            if "kj" in unit:
+                                enthalpy_vap = val * 1000  # kJ/mol → J/mol
+                            elif "kcal" in unit:
+                                enthalpy_vap = val * 4184  # kcal/mol → J/mol
+                            else:
+                                enthalpy_vap = val 
+
+            # 🔁 Récursivité
             if "Section" in section:
                 parse_sections(section["Section"])
 
@@ -195,20 +204,14 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
     else:
         print("⚠️ Not enough data to calculate evaporation curve.")
         return None, None, None, None, None
-    
 
     plt.xlabel("Time (hours)")
     plt.ylabel("Relative Concentration")
     plt.title(f"Evaporation Curve of {compound_name_or_smiles}")
     plt.grid(False)
     plt.legend()
-
     plt.tight_layout()
     plt.savefig(save_path)
-    
     plt.close()
 
     return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, save_path
-
-
-
