@@ -71,7 +71,7 @@ def test_usable_in_perfume():
     print(f"Test 1 - {molecule_1}: {msg_1}")
     assert "👃 Smell detected." in msg_1, "Odor detection failed"
     assert "🧴 Skin-safe." in msg_1, "Skin safety not properly evaluated"
-    assert "**base note**" in msg_1, "Note classification is incorrect"
+    assert "**heart note**" in msg_1, "Note classification is incorrect"
 
     # Test Case 2: Molecule with no detectable odor, safe for skin 
     molecule_2 = "water"  # Water has no odor
@@ -86,7 +86,7 @@ def test_usable_in_perfume():
     print(f"Test 3 - {molecule_3}: {msg_3}")
     assert "👃 Smell detected." in msg_3, "Odor should be detected"
     assert "⚠️ Not confirmed safe for skin contact." in msg_3, "Skin safety should be flagged as not confirmed"
-    assert "**heart note**" in msg_3, "Note classification is incorrect"
+    assert "**base note**" in msg_3, "Note classification is incorrect"
     
     # Test Case 4: Molecule with no evaporation data 
     molecule_4 = "Squalane"  

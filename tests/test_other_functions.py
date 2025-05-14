@@ -1,6 +1,4 @@
 from src.perfumeme.utils import resolve_input_to_smiles_and_cid , get_odor, get_smiles, get_cid_from_smiles
-import src.perfumeme.utils as utils
-import pandas as pd
 import pytest 
 
 
