@@ -120,7 +120,7 @@ display(Image(filename=plot_path))
 
 The output of this first command will be : 
 
-<img width=500  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
+<img width=400  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
 
 Now you can find out the presence of your molecule in famous fragrances and extract olfactory information.
 
@@ -179,30 +179,28 @@ print(f"⚡ Enthalpy of Vaporization: {enthalpy} J/mol")
 
 The output will be : 
 
-"💨 Vapor Pressure: 0.16 mmHg"
-"🔥 Boiling Point: 194°C"
-"🌡️ Vapor Pressure Measured at: 23.5 °C"
-"⚡ Enthalpy of Vaporization: None J/mol"
+💨 Vapor Pressure: 0.16 mmHg
+🔥 Boiling Point: 194°C
+🌡️ Vapor Pressure Measured at: 23.5 °C
+⚡ Enthalpy of Vaporization: 51400 J/mol
 
+## 🔧 Fixing issues
 
+If you encounter an issue with the package’s functions, start by ensuring that you are using the latest version. You can do this by running the following command in your terminal:
 
+```bash
+pip show perfumeme
+```
 
+You can then compare your installed version with the latest available version listed on the PyPI page, https://pypi.org/project/perfumeme/
 
+If your installed version is outdated, update it by running the following command in your terminal:
 
+```bash
+pip install perfumeme -U
+```
 
+## 🚀 Start 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Open a Jupyter Notebook and discover more about your favourite molecules ! 
+Try it out and maybe… find your next signature scent!
