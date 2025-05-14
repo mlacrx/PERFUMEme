@@ -104,6 +104,12 @@ This includes:
 - Perfume compatibility (note type)
 - Perfumes in which the molecule appears
 
+An example on how to make our key functions (usable_in_perfume and perfume_molecule) work is shown below for linalool. 
+
+```bash
+import 
+
+
 
 
 
