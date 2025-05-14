@@ -107,7 +107,19 @@ This includes:
 An example on how to make our key functions (usable_in_perfume and perfume_molecule) work is shown below for linalool. 
 
 ```bash
-import 
+import perfumeme as pm
+
+mol = "Linalool"
+
+summary, plot_path = perfumeme.usable_in_perfume(mol)
+print (summary)
+
+from IPython.display import Image
+Image(filename=plot_path)
+```
+The output of this first command will be : 
+
+<img width=500  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets>
 
 
 
