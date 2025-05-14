@@ -1,4 +1,5 @@
 from src.perfumeme.utils import resolve_input_to_smiles_and_cid , get_odor, get_smiles, get_cid_from_smiles
+import src.perfumeme.utils as utils
 import pandas as pd
 import pytest 
 
@@ -44,17 +45,7 @@ def test_resolve_input_to_smiles_and_cid():
     assert cid == expected_cid
 
 
-"""def test_get_odor(monkeypatch):
-    # Create a fake DataFrame
-    fake_df = pd.DataFrame({
-        "Name": ["Citronellol"],
-        "Odor_notes": ["floral;rose;fresh"]
-    })
+def test_get_odor():
 
-    # Patch the global df inside your module
-    monkeypatch.setattr(perfumeme.utils.py, "df", fake_df)
-
-    # Now test normally
-    result = get_odor("citronellol")
-    assert result == "floral;rose;fresh"
-"""
+    expected = "allspice;bacon;cinnamyl;clove;dry;floral;ham;honey;phenolic;pungent;savory;smoky;spicy;sweet;warm;woody"
+    assert get_odor("eugenol") == expected
