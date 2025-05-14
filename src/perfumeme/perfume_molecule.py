@@ -5,7 +5,7 @@ def match_molecule_to_perfumes(mol):
     """
     gives a list of perfumes which contain the molecule
     """
-    DATA_PATH_PERF = Path("data/perfume.json")
+    DATA_PATH_PERF = Path("data/perfumes.json")
     if DATA_PATH_PERF.exists():
         with open(DATA_PATH_PERF, "r", encoding="utf-8") as f:
             perfumes = json.load(f)
@@ -16,7 +16,7 @@ def match_molecule_to_perfumes(mol):
     matched_perfumes = []
     for perfume in perfumes:
         if mol_upper in perfume.get("molecules", []):
-            matched_perfumes.append(f"{perfume["name"]} by {perfume["brand"]}")
+            matched_perfumes.append(f"{perfume['name']} by {perfume['brand']}")
 
     if matched_perfumes == []:
         return f"No perfumes found containg this molecule."
