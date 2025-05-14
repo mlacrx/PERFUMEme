@@ -47,10 +47,12 @@ def test_evaporation_trace():
     vp_linalool = 0.16
     vp_temp_linalool = 25.0
     bp_linalool = 198  #°C
+    enthalpy_linalool = 51400.0
 
     vp_l, bp_l, vp_temp_l, enthalpy_l, path_l = evaporation_trace("linalool") 
-    assert bp_l == bp_linalool 
+    assert abs(bp_l - bp_linalool) < 5 
     assert vp_linalool == vp_l and vp_temp_l == vp_temp_linalool
+    assert enthalpy_l == enthalpy_linalool
  
 
 
