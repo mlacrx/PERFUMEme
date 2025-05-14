@@ -188,18 +188,16 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         print("⚠️ Not enough data to calculate evaporation curve.")
         return None, None, None, None, None
     
-    fig, ax = plt.subplots()
-    ax.grid(False)
 
     plt.xlabel("Time (hours)")
     plt.ylabel("Relative Concentration")
-    plt.title("Evaporation Curve")
-    plt.grid(True)
+    plt.title(f"Evaporation Curve of {compound_name_or_smiles}")
+    plt.grid(False)
     plt.legend()
 
     plt.tight_layout()
     plt.savefig(save_path)
-    plt.show()
+    
     plt.close()
 
     return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, save_path

@@ -79,7 +79,7 @@ def test_usable_in_perfume():
     
     """
     Check that the function take the good information from the 3 main functions  
-    
+    """
     # Test Case 1: Molecule with an odor, safe for skin, and appropriate volatility 
     molecule_1 = "coumarin"  
     msg_1, plot_path_1 = usable_in_perfume(molecule_1)
@@ -96,21 +96,16 @@ def test_usable_in_perfume():
     assert "🧴 Skin-safe." in msg_2, "Water is generally safe for skin, this test should pass"
 
     # Test Case 3: Molecule with an odor but not always safe for skin 
-    molecule_3 = "geraniol"  
+    molecule_3 = "linalool"  
     msg_3, plot_path_3 = usable_in_perfume(molecule_3)
     print(f"Test 3 - {molecule_3}: {msg_3}")
     assert "👃 Smell detected." in msg_3, "Odor should be detected"
     assert "⚠️ Not confirmed safe for skin contact." in msg_3, "Skin safety should be flagged as not confirmed"
-
+    assert "**heart note**" in msg_3, "Note classification is incorrect"
+    
     # Test Case 4: Molecule with no evaporation data 
     molecule_4 = "Squalane"  
     msg_4, plot_path_4 = usable_in_perfume(molecule_4)
     print(f"Test 4 - {molecule_4}: {msg_4}")
     assert "⚠️ Insufficient volatility data to classify the note." in msg_4, "Volatility data should be insufficient for this molecule"
-"""
-    molecule_5 ="linalool"
-    msg_5, plot_path_5 =usable_in_perfume(molecule_5)
-    print(f"test 5 -{molecule_5}:{msg_5}" )
-    assert "👃 Smell detected." in msg_5, "Odor should be detected"
-    assert "⚠️ Not confirmed safe for skin contact." in msg_5, "Skin safety should be flagged as not confirmed"
-    assert "**heart note**" in msg_5, "Note classification is incorrect"
+
