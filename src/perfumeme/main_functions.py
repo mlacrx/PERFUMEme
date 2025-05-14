@@ -106,57 +106,56 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         nonlocal vapor_pressure_value, vapor_pressure_temp, boiling_point, fallback_celsius, enthalpy_vap
 
         for section in sections:
-            for info in section.get("Information", []):
-                val = info.get("Value", {})
-                raw = val.get("StringWithMarkup", [{}])[0].get("String", "")
+            heading = section.get("TOCHeading", "").lower()
 
-
-                raw_lower = raw.lower()
-
-                if "mmhg" in raw_lower or "kpa" in raw_lower or "pa" in raw_lower:
-                    match_p = re.search(r"([\d\.,eE+-]+)\s*(mmhg|kpa|pa)", raw_lower)
-                    match_t = re.search(r"at\s+([\d\.,]+)\s*°?\s*([cf])", raw_lower)
+            if any(k in heading for k in ["vapor pressure"]):
+                for info in section.get("Information", []):
+                    val = info.get("Value", {})
+                    raw = val.get("StringWithMarkup", [{}])[0].get("String", "").lower()
+                    match_p = re.search(r"([\d\.eE-]+)\s*(mmhg|kpa|pa)", raw)
+                    match_t = re.search(r"at\s+([\d\.]+)\s*°?\s*([cf])", raw)
                     if match_p:
-                        try:
-                            pressure = float(match_p.group(1).replace(",", ""))
-                            unit = match_p.group(2)
-                            if unit == "kpa":
-                                pressure *= 7.50062
-                            elif unit == "pa":
-                                pressure /= 133.322
-                            vapor_pressure_value = pressure
-                        except:
-                            pass
-
+                        pressure = float(match_p.group(1))
+                        unit = match_p.group(2)
+                        if unit == "kpa":
+                            pressure *= 7.50062
+                        elif unit == "pa":
+                            pressure /= 133.322
+                        temp = None
                         if match_t:
-                            try:
-                                t_val = float(match_t.group(1).replace(",", ""))
-                                t_unit = match_t.group(2)
-                                vapor_pressure_temp = t_val if t_unit == "c" else (t_val - 32) * 5 / 9
-                            except:
-                                vapor_pressure_temp = 25
-                        else:
-                            vapor_pressure_temp = 25
+                            t_val = float(match_t.group(1))
+                            t_unit = match_t.group(2)
+                            temp = t_val if t_unit == "c" else (t_val - 32) * 5 / 9
+                        vapor_pressure_value = pressure
+                        vapor_pressure_temp = temp if temp is not None else 25
 
-                if "boiling" in raw_lower:
-                    match_bp = re.search(r"([\d\.,]+)\s*°?\s*c", raw_lower)
-                    if match_bp:
+            if "boiling point" in heading:
+                for info in section.get("Information", []):
+                    val = info.get("Value", {}).get("StringWithMarkup", [{}])[0].get("String", "").lower()
+                    if "°f" in val:
                         try:
-                            boiling_point = float(match_bp.group(1).replace(",", ""))
+                            f = float(val.split()[0].replace("°f", "").replace("f", "").strip())
+                            boiling_point = (f - 32) * 5 / 9
                         except:
-                            pass
-
-                if "enthalpy" in raw_lower or "vaporization" in raw_lower or "evaporation" in raw_lower:
-                    match_h = re.search(r"([\d\.,]+)\s*(kj/mol|j/mol)", raw_lower)
-                    if match_h:
+                            continue
+                    elif "°c" in val or "c" in val:
                         try:
-                            val = float(match_h.group(1).replace(",", ""))
+                            c = float(val.split()[0].replace("°c", "").replace("c", "").strip())
+                            fallback_celsius = c
+                        except:
+                            continue
+
+            if any(k in heading for k in ["enthalpy", "heat", "vaporization", "evaporation"]):
+                for info in section.get("Information", []):
+                    for item in info.get("Value", {}).get("StringWithMarkup", []):
+                        text = item.get("String", "").lower()
+                        match_h = re.search(r"([\d\.]+)\s*(kj/mol|j/mol)", text)
+                        if match_h:
+                            val = float(match_h.group(1))
                             enthalpy_vap = val * 1000 if "kj" in match_h.group(2) else val
-                        except:
-                            pass
+
             if "Section" in section:
                 parse_sections(section["Section"])
-
 
     parse_sections(sections)
 
@@ -202,4 +201,6 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
     plt.close()
 
     return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, save_path
+
+
 

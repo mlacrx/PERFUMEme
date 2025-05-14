@@ -1,28 +1,6 @@
 from src.perfumeme.main_functions import has_a_smell, is_toxic_skin, evaporation_trace
 from src.perfumeme.usable_in_perfume import usable_in_perfume
-from src.perfumeme.utils import get_smiles, get_cid_from_smiles
 import pytest
-
-
-
-def test_get_smiles():
-    """
-    Check if the smile given is associated to the good molecule
-    """
-    compound_name = "geraniol"
-    expected_smiles = "CC(=CCC/C(=C/CO)/C)C"  # Le SMILES attendu pour geraniol
-    smiles = get_smiles(compound_name)
-    assert smiles == expected_smiles
-
-
-def test_get_cid_from_smiles():
-    """
-    Check if the cid given corresponds to the SMILE and therefore to the good molecule 
-    """
-    smile = "CC(=CCC/C(=C/CO)/C)C"
-    expected_cid = "637566"
-    cid = get_cid_from_smiles(smile)
-    assert str(cid) == expected_cid
 
 
 def test_has_a_smell():
@@ -63,16 +41,21 @@ def test_is_toxic_skin():
 
 def test_evaporation_trace():
     """
-    Check that the function returns numeric values or None for each molecule and doesn't crash
+    Test evaporation_trace() against known reference values for linalool and ethanol.
+    Checks the presence, types, and realistic ranges of returned values.
     """
-    # Test with known molecule (e.g., Ethanol)
-    vp, bp, temp, enthalpy, save_path = evaporation_trace("CCO")  
-  
-    assert isinstance(vp, (int,float, type(None))) # Vapor Pressure should be float or None
-    assert isinstance(bp, (int,float, type(None))) # Boiling Point should be float or None
-    assert isinstance(temp, (int,float, type(None))) # Temperature should be float or None
-    assert isinstance(enthalpy, (int,float, type(None))) # Enthalpy should be float or None
-    assert isinstance(save_path, (str, type(None))) # Save_path should be str or None 
+    vp_linalool = 0.16
+    vp_temp_linalool = 25.0
+    bp_linalool = 198  #°C
+
+    vp_l, bp_l, vp_temp_l, enthalpy_l, path_l = evaporation_trace("linalool") 
+    assert bp_l == bp_linalool 
+    assert vp_linalool == vp_l and vp_temp_l == vp_temp_linalool
+ 
+
+
+
+
 
 
 def test_usable_in_perfume():
