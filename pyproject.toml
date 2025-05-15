@@ -58,10 +58,6 @@ path = "src/perfumeme/__init__.py"
 [tool.hatch.build]
 sources = ["src"]
 
-include = [
-  "data/*"
-]
-
 [project.optional-dependencies]
 test = ["pytest"]
 doc = [
