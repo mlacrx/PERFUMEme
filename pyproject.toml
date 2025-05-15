@@ -62,6 +62,10 @@ sources = ["src"]
 test = ["pytest"]
 doc = [
     "sphinx",
-    "myst-parser"
+    "furo",
+    "myst-parser",
+    "sphinx-copybutton",
+    "sphinx-autodoc-typehints"
 ]
+
 
