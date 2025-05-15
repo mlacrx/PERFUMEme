@@ -60,4 +60,5 @@ sources = ["src"]
 
 [project.optional-dependencies]
 test = ["pytest"]
+doc = ["sphinx"]
 
