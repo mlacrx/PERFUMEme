@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import re
 import math
-from .utils import get_pubchem_description, get_pubchem_record_sections, resolve_input_to_smiles_and_cid
+from perfumeme.utils import get_pubchem_description, get_pubchem_record_sections, resolve_input_to_smiles_and_cid
 
 
 def has_a_smell(compound_name_or_smiles):
@@ -31,6 +31,7 @@ def has_a_smell(compound_name_or_smiles):
         if any(keyword in description for keyword in ["odor", "odour", "fragrance", "aroma", "scent", "smell"]):
             return True
     return False
+
 
 def is_toxic_skin(compound_name_or_smiles):
     """
@@ -71,10 +72,32 @@ def is_toxic_skin(compound_name_or_smiles):
   
 
 def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporation_curve.png"):
-    import re
-    import math
-    import numpy as np
-    import matplotlib.pyplot as plt
+    """
+    Computes and plots the evaporation profile of a compound using thermodynamic data from PubChem.
+
+    The function attempts to retrieve vapor pressure, temperature of measurement, boiling point, and 
+    enthalpy of vaporization from the compound's PubChem record. If sufficient data is available,
+    it simulates the evaporation curve using the Clausius-Clapeyron equation or a fallback exponential model.
+    The resulting curve is saved as an image.
+
+    Args:
+        compound_name_or_smiles (str): The compound's common name or SMILES string.
+        save_path (str, optional): Path to save the resulting plot image. Defaults to "evaporation_curve.png".
+
+    Returns:
+        tuple:
+            - vapor_pressure_value (float or None): Vapor pressure in mmHg if found, else None.
+            - boiling_point (float or None): Boiling point in °C if found, else None.
+            - vapor_pressure_temp (float or None): Temperature at which vapor pressure was measured, in °C.
+            - enthalpy_vap (float or None): Enthalpy of vaporization in J/mol.
+            - save_path (str): The path where the plot was saved.
+
+
+    Notes:
+        - Uses a recursive parser to extract data from PubChem sections.
+        - Falls back to a simplified exponential model if insufficient data is available for the Clausius-Clapeyron model.
+        - Requires matplotlib and numpy to be installed.
+    """
 
     smiles, cid = resolve_input_to_smiles_and_cid(compound_name_or_smiles)
     sections = get_pubchem_record_sections(cid)
@@ -91,7 +114,6 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         for section in sections:
             heading = section.get("TOCHeading", "").lower()
 
-            # 🔍 VAPOR PRESSURE – recherche ciblée
             if "vapor pressure" in heading:
                 for info in section.get("Information", []):
                     val = info.get("Value", {})
@@ -100,7 +122,6 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
                     for raw in strings:
                         raw_lower = raw.lower()
 
-                        # Extraction de plusieurs pressions dans une même chaîne
                         matches = re.findall(
                             r"([\d\.,eE+-]+)\s*(?:\[)?\s*(mmhg|kpa|pa)\s*(?:\])?(?:\s*(?:at)?\s*([\d\.,]+)?\s*°?\s*([cf]))?",
                             raw_lower
@@ -108,14 +129,14 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
 
                         for match in matches:
                             if vapor_pressure_value is not None:
-                                break  # première valeur seulement
+                                break 
 
                             val_str, unit, temp_str, temp_unit = match
 
                             try:
                                 pressure = float(val_str.replace(",", ""))
                                 if pressure >= 100:
-                                    continue  # éviter les 760 mmHg typiques de conditions de mesure
+                                    continue 
                                 if unit == "kpa":
                                     pressure *= 7.50062
                                 elif unit == "pa":
@@ -136,7 +157,6 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
                         if vapor_pressure_value is not None:
                             break
 
-            # 🔍 BOILING POINT
             if "boiling point" in heading:
                 for info in section.get("Information", []):
                     val = info.get("Value", {}).get("StringWithMarkup", [{}])[0].get("String", "").lower()
@@ -153,7 +173,6 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
                         except:
                             continue
 
-            # 🔍 ENTHALPY OF VAPORIZATION
             if any(k in heading for k in ["enthalpy", "heat", "vaporization", "evaporation"]):
                 for info in section.get("Information", []):
                     for item in info.get("Value", {}).get("StringWithMarkup", []):
@@ -164,13 +183,12 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
                             unit = match_h.group(2)
 
                             if "kj" in unit:
-                                enthalpy_vap = val * 1000  # kJ/mol → J/mol
+                                enthalpy_vap = val * 1000 
                             elif "kcal" in unit:
-                                enthalpy_vap = val * 4184  # kcal/mol → J/mol
+                                enthalpy_vap = val * 4184 
                             else:
                                 enthalpy_vap = val 
 
-            # 🔁 Récursivité
             if "Section" in section:
                 parse_sections(section["Section"])
 

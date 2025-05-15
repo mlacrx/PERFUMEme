@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from .main_functions import has_a_smell, is_toxic_skin, evaporation_trace
+from perfumeme.main_functions import has_a_smell, is_toxic_skin, evaporation_trace
 
 
 def usable_in_perfume(smiles_or_name: str):
