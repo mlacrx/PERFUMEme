@@ -55,5 +55,6 @@ GitHub_Coline_Lepers = "https://github.com/clepers"
 [tool.hatch.version]
 path = "src/perfumeme/__init__.py"
 
-
+[tool.hatch.build]
+sources = ["src"]
 
