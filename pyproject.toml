@@ -60,5 +60,8 @@ sources = ["src"]
 
 [project.optional-dependencies]
 test = ["pytest"]
-doc = ["sphinx"]
+doc = [
+    "sphinx",
+    "myst-parser"
+]
 
