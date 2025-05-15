@@ -48,7 +48,7 @@ def match_mol_to_odor(mol):
 
     
 
-def combination(mol):
+def odor_molecule_perfume(mol):
     """
     gives a dictionnary of perfumes which contain the molecule and the odor the molecule give to the perfume
     """
