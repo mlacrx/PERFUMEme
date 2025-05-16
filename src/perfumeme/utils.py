@@ -122,7 +122,7 @@ def get_cid_from_smiles(smiles):
     return cids[0]
 
     
-def get_pubchem_description(cid):
+def get_pubchem_description(smiles):
     """
     Retrieves the textual description entries for a compound from PubChem using its CID.
 
@@ -140,7 +140,7 @@ def get_pubchem_description(cid):
     Raises:
         requests.exceptions.RequestException: If the API request fails.
     """
-
+    cid = get_cid_from_smiles(smiles)
     url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/description/JSON"
     response = requests.get(url)
     response.raise_for_status()
