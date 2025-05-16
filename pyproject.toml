@@ -68,4 +68,6 @@ doc = [
     "sphinx-autodoc-typehints"
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
 
