@@ -1,4 +1,4 @@
-from src.perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes
+from perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes
 import pytest 
 
 def test_match_molecule_to_perfume():

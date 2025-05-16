@@ -1,4 +1,4 @@
-from src.perfumeme.main_functions import has_a_smell, is_toxic_skin, evaporation_trace
+from perfumeme.main_functions import has_a_smell, is_toxic_skin, evaporation_trace
 import pytest
 
 
