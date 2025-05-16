@@ -79,7 +79,7 @@ def usable_in_perfume(smiles_or_name: str):
                     fontsize = 8, fontweight='bold', color = 'darkblue',
                     bbox = dict(facecolor = 'white', alpha=0.6, edgecolor = 'none'))
             annotated_path = plot_path.replace(".png","_annotated.png")
-            plt.savefig(annotated_path, bbox_inches = 'tight', dpi=700)
+            plt.savefig(annotated_path, bbox_inches = 'tight')
             plt.show()
             plt.close()
         else:

@@ -246,7 +246,7 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
     plt.grid(False)
     plt.legend()
     plt.tight_layout()
-    plt.savefig(save_path)
+    plt.savefig(save_path, dpi=500)
     plt.close()
 
     return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, save_path

@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+import os
 
 def match_molecule_to_perfumes(mol):
     """
@@ -23,9 +24,9 @@ def match_molecule_to_perfumes(mol):
         The molecule matching is performed in uppercase for consistency.
     """
    
-    DATA_PATH_PERF = Path("data/perfumes.json")
-    if DATA_PATH_PERF.exists():
-        with open(DATA_PATH_PERF, "r", encoding="utf-8") as f:
+    path_perf = os.path.abspath(os.path.join(os.getcwd(), "..", "data", "perfumes.json"))
+    if os.path.exists(path_perf):
+        with open(path_perf, "r", encoding="utf-8") as f:
             perfumes = json.load(f)
     else:
         return []
@@ -63,9 +64,9 @@ def match_mol_to_odor(mol):
         The molecule name comparison is performed in lowercase for consistency.
     """
 
-    DATA_PATH_MOL = Path("data/molecules.json")
-    if DATA_PATH_MOL.exists():
-        with open(DATA_PATH_MOL, "r", encoding="utf-8") as f:
+    path = os.path.abspath(os.path.join(os.getcwd(), "..", "data", "molecules.json"))
+    if os.path.exists(path):
+        with open(path, "r", encoding="utf-8") as f:
             molecules = json.load(f)
     else:
         return []
