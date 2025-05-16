@@ -26,28 +26,37 @@ def has_a_smell(compound_name_or_smiles):
     smiles, cid = resolve_input_to_smiles_and_cid(compound_name_or_smiles)
     sections = get_pubchem_record_sections(cid)
 
-    def search_odor(section_list):
-        for section in section_list:
-            # Analyse les titres et descriptions
-            heading = section.get("TOCHeading", "").lower()
-            description = section.get("Description", "").lower()
+    odorless_keywords = ["odorless", "odourless", "no smell", "no odour", "without odor"]
+    odor_keywords = ["odor", "odour", "fragrance", "aroma", "scent", "smell"]
 
-            if "odor" in heading or "odour" in heading or "odor" in description or "odour" in description:
-                return True
+    def deep_search(obj):
+        if isinstance(obj, dict):
+            for value in obj.values():
+                result = deep_search(value)
+                if result is False:
+                    return False
+                if result is True:
+                    return True
+        elif isinstance(obj, list):
+            for item in obj:
+                result = deep_search(item)
+                if result is False:
+                    return False
+                if result is True:
+                    return True
+        elif isinstance(obj, str):
+            text = obj.lower()
+            if any(kw in text for kw in odorless_keywords):
+                return False  # ⛔ Found odorless → exit immediately
+            if any(re.search(rf"\b{kw}\b", text) for kw in odor_keywords):
+                return True  # ✅ Found odor-related word → exit
+        return None
 
-            # Recurse dans les sous-sections
-            if search_odor(section.get("Section", [])):
-                return True
+    result = deep_search(sections)
+    return result if result is not None else False
 
-        return False
+  
 
-    return search_odor(sections)
-
-    for entry in descriptions:
-        description = entry.get("Description", "").lower()
-        if any(keyword in description for keyword in ["odor", "odour", "fragrance", "aroma", "scent", "smell"]):
-            return True
-    return False
 
 
 def is_toxic_skin(compound_name_or_smiles):

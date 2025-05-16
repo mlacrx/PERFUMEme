@@ -7,9 +7,9 @@ def test_has_a_smell():
     check that a molecule odorous/odorless is detected corectly and that an invalid entry do not crash the fonction
     """
     #Test with known odorous molecule SMILE
-    assert has_a_smell("CC(=CCC/C(=C/CO)/C)C") is True #geraniol
+    assert has_a_smell("C1=CC=C2C(=C1)C=CC(=O)O2") is True 
     #Test with known odorous molecule Name
-    assert has_a_smell("geraniol") is True 
+    assert has_a_smell("coumarin") is True 
 
     #Test with known odourless molecule SMILE and name: Water
     assert has_a_smell("O") is False 

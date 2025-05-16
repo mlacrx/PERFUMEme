@@ -16,8 +16,8 @@ def test_get_cid_from_smiles():
     """
     Check if the cid given corresponds to the SMILE and therefore to the good molecule 
     """
-    smile = "CC(=CCC/C(=C/CO)/C)C"
-    expected_cid = "637566"
+    smile = "C1=CC=C2C(=C1)C=CC(=O)O2"
+    expected_cid = "323"
     cid = get_cid_from_smiles(smile)
     assert str(cid) == expected_cid
 

@@ -95,6 +95,7 @@ def get_odor(compound_name):
         raise Exception(f"Odor information not found for {compound_name}")
 
 
+
 def get_cid_from_smiles(smiles):
     """
     Retrieves the PubChem Compound ID (CID) corresponding to a given SMILES string.
@@ -113,13 +114,15 @@ def get_cid_from_smiles(smiles):
         Exception: If the request fails or if no CID is found for the SMILES input.
     """
     
-    encoded_smiles = urllib.parse.quote(smiles)
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{encoded_smiles}/JSON"
-    response = requests.get(url)
+    url = "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/JSON"
+    data = {"smiles": smiles}
+    headers = {"Content-Type": "application/x-www-form-urlencoded"}
+
+    response = requests.post(url, data=data, headers=headers, timeout=10)
     response.raise_for_status()
 
     try:
-        cid = response.json()["PC_Compounds"][0]["id"]["id"]["cid"]
+        cid = response.json()["IdentifierList"]["CID"][0]
         return cid
     except (KeyError, IndexError):
         raise Exception("CID not found in PubChem response")
