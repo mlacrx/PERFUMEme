@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import re
 import math
-from perfumeme.utils import get_pubchem_description, get_pubchem_record_sections, resolve_input_to_smiles_and_cid
+from perfumeme.utils import get_pubchem_record_sections, resolve_input_to_smiles_and_cid
 
 
 def has_a_smell(compound_name_or_smiles):
@@ -24,7 +24,24 @@ def has_a_smell(compound_name_or_smiles):
         Exception: If the compound name or SMILES is invalid or if there is an issue retrieving data from PubChem.
     """
     smiles, cid = resolve_input_to_smiles_and_cid(compound_name_or_smiles)
-    descriptions = get_pubchem_description(cid)
+    sections = get_pubchem_record_sections(cid)
+
+    def search_odor(section_list):
+        for section in section_list:
+            # Analyse les titres et descriptions
+            heading = section.get("TOCHeading", "").lower()
+            description = section.get("Description", "").lower()
+
+            if "odor" in heading or "odour" in heading or "odor" in description or "odour" in description:
+                return True
+
+            # Recurse dans les sous-sections
+            if search_odor(section.get("Section", [])):
+                return True
+
+        return False
+
+    return search_odor(sections)
 
     for entry in descriptions:
         description = entry.get("Description", "").lower()

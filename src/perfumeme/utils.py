@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import pandas as pd
 import os
+import urllib.parse
 
 
 def get_smiles(compound_name): 
@@ -111,18 +112,17 @@ def get_cid_from_smiles(smiles):
     Raises:
         Exception: If the request fails or if no CID is found for the SMILES input.
     """
-    
-    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/cids/JSON"
-    data={"smiles":smiles}
-    response = requests.post(url, data=data)
+    url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/smiles/{smiles}/JSON"
+    response = requests.post(url, data={"smiles": smiles})
     response.raise_for_status()
+    
     cids = response.json().get("IdentifierList", {}).get("CID", [])
     if not cids:
         raise Exception("No CID found for the given SMILES")
     return cids[0]
 
     
-def get_pubchem_description(smiles):
+def get_pubchem_description(cid):
     """
     Retrieves the textual description entries for a compound from PubChem using its CID.
 
@@ -140,7 +140,7 @@ def get_pubchem_description(smiles):
     Raises:
         requests.exceptions.RequestException: If the API request fails.
     """
-    cid = get_cid_from_smiles(smiles)
+
     url = f"https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/{cid}/description/JSON"
     response = requests.get(url)
     response.raise_for_status()
