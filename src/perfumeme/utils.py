@@ -5,6 +5,7 @@ import requests
 import json
 from pathlib import Path
 import pandas as pd
+import os
 
 
 def get_smiles(compound_name): 
@@ -63,7 +64,11 @@ def resolve_input_to_smiles_and_cid(input_str):
         return smiles, cid
 
     
-df = pd.read_csv("data/withodors.csv")
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+
+csv_path = os.path.join(project_root, 'data', 'withodors.csv')
+
+df = pd.read_csv(csv_path)
 
 def get_odor(compound_name):
     """
