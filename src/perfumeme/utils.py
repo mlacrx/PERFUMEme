@@ -54,7 +54,7 @@ def resolve_input_to_smiles_and_cid(input_str):
     try:
         cid = get_cid_from_smiles(input_str)
         return input_str, cid
-    except Exception:
+    except requests.HTTPError:
         smiles = get_smiles(input_str)
         cid = get_cid_from_smiles(smiles)
         return smiles, cid
