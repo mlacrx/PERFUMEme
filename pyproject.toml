@@ -72,5 +72,6 @@ doc = [
 testpaths = ["tests"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/perfumeme"]
+packages = ["perfumeme"]
+
 
