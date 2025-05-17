@@ -64,12 +64,6 @@ def resolve_input_to_smiles_and_cid(input_str):
         cid = get_cid_from_smiles(smiles)
         return smiles, cid
 
-    
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-
-csv_path = os.path.join(project_root, 'data', 'withodors.csv')
-
-df = pd.read_csv(csv_path)
 
 def get_odor(compound_name):
     """
@@ -87,13 +81,23 @@ def get_odor(compound_name):
     Raises:
         Exception: If the compound name is not found in the dataset.
     """
+    project_root = Path(__file__).resolve().parents[2]
+    csv_path = project_root / "data" / "withodors.csv"
+
+    if not csv_path.exists():
+        raise FileNotFoundError(
+            f"\n❌ File not found: {csv_path}\n"
+            "Make sure the 'data/withodors.csv' file is present in the root directory of the project.\n"
+            "This file is not included in the PyPI distribution."
+        )
+
+    df = pd.read_csv(csv_path)
 
     row = df[df["Name"].str.lower() == compound_name.lower()]
     if not row.empty:
         return row.iloc[0]["Odor_notes"]
     else:
-        raise Exception(f"Odor information not found for {compound_name}")
-
+        raise Exception(f"Odor information not found for '{compound_name}'.")
 
 
 def get_cid_from_smiles(smiles):
