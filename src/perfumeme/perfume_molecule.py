@@ -138,13 +138,13 @@ def what_notes(perfume: str, note_type: str):
         The note matching is performed in uppercase for consistency.
     """
     
-    project_root = Path(__file__).resolve().parents[2]  
-    path_perf = project_root / "data" / "perfumes.json"
-    if os.path.exists(path_perf):
-        with open(path_perf, "r", encoding="utf-8") as f:
-            perfumes = json.load(f)
-    else:
+    path_perf = Path.home() / ".perfumeme" / "perfumes.json"
+
+    if not path_perf.exists():
         return []
+
+    with open(path_perf, "r", encoding="utf-8") as f:
+        perfumes = json.load(f)
     
         
     perfume_upper = perfume.upper()

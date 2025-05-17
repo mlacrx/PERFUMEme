@@ -7,7 +7,7 @@ from perfumeme.utils import get_smiles,get_pubchem_record_sections,get_cid_from_
 from perfumeme.scraper import load_data_smiles, save_data_smiles,add_molecule,load_data_odor,save_data_odor,add_odor_to_molecules
 from perfumeme.usable_function import usable_in_perfume
 
-__version__ = "1.0.8"
+__version__ = "1.1.0"
 import os
 import shutil
 from pathlib import Path
