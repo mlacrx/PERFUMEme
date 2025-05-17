@@ -117,7 +117,7 @@ def odor_molecule_perfume(mol):
         dict_mol["odors"]= match_mol_to_odor(mol)
         return dict_mol
     
-def what_notes(perfume: str, type: str):
+def what_notes(perfume: str, note_type: str):
     """
     Retrieves the notes of a specified perfume from a JSON database.
 
@@ -147,7 +147,7 @@ def what_notes(perfume: str, type: str):
     
         
     perfume_upper = perfume.upper()
-    type_upper = type.upper()
+    note_type_upper = note_type.upper()
     perf_list = []
     for perf in perfumes:
         if perfume_upper == perf.get("name", []).upper():
@@ -157,14 +157,19 @@ def what_notes(perfume: str, type: str):
 
     for perf in perfumes:
         if perfume_upper == perf.get("name", []).upper():
-            print(f"{type} notes for {perfume}:")
-            if type_upper == "TOP":
-                return perf.get("top", [])
-            elif type_upper == "HEART":
+            print(f"{note_type} notes for {perfume}:")
+            if note_type_upper == "TOP":
+                return perf.get("notes", {}).get("top")
+            elif note_type_upper == "HEART":
                 return perf.get("notes", {}).get("heart")
-            elif type_upper == "BASE":
-                return perf.get("base", [])
-        if type_upper not in ["TOP", "HEART", "BASE"]:
+            elif note_type_upper == "BASE":
+                return perf.get("notes", {}).get("base")
+        if note_type_upper not in ["TOP", "HEART", "BASE"]:
                 return f"Invalid note type. Please use 'top', 'heart', or 'base'."
+
+perfume = "La nuit de l'Homme"
+note_type = "top"
+expected_output = ["SAGE ESSENCE"]
+print(what_notes(perfume, note_type))
 
 

@@ -1,4 +1,4 @@
-from perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes
+from perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes, what_notes
 import pytest 
 
 def test_match_molecule_to_perfume():
@@ -44,3 +44,23 @@ def test_odor_molecule_perfume():
     #Test with a molecule not used in per 
     expected_res = odor_molecule_perfume("Iron")
     assert expected_res == "No perfumes found containg this molecule."
+
+def test_what_notes():
+    """
+    Check if the function is effective to match perfume and notes
+    """
+    #Test with a perfume present in the database
+    perfume = "La nuit de l'Homme"
+    note_type = "top"
+    expected_output = ["SAGE ESSENCE"]
+    assert what_notes(perfume, note_type) == expected_output
+
+    #Test with a perfume not in the database
+    perfume_1 = "Iron"
+    expected_output_1 = "Perfume not found."
+    assert what_notes(perfume_1, note_type) == expected_output_1
+
+    #Test with wrong note type
+    perfume_2 = "Libre"
+    note_type_2 = "middle"
+    assert what_notes(perfume_2, note_type_2) == "Invalid note type. Please use 'top', 'heart', or 'base'."
