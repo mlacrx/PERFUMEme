@@ -128,7 +128,7 @@ print (odor_molecule_perfume(molecule))
 
 The output of this second command will be : 
 
-<img width=400  alt = "odor molecule perfume linalool"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool_perfume.png">
+<img width=700  alt = "odor molecule perfume linalool"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool_perfume.png">
 
 ### 👩‍🔬 Physical properties
 
