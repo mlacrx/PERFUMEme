@@ -17,10 +17,8 @@ def usable_in_perfume(smiles_or_name: str):
         smiles_or_name (str): The SMILES string or compound name.
 
     Returns:
-        tuple:
-            - msg (str): A summary string indicating perfume suitability, note classification, and safety.
-            - annotated_path (str or None): File path to the saved annotated evaporation curve image, or None 
-              if no plot was generated.
+        msg (str): A summary string indicating perfume suitability, note classification, and safety.
+
     
     Notes:
         - Uses `has_a_smell`, `is_toxic_skin`, and `evaporation_trace` from the package.
