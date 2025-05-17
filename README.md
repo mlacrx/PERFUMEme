@@ -184,6 +184,27 @@ pip install --upgrade perfumeme
 
 ```
 
+If when importing perfumeme in a Jupyter Notebook doesn't work, it may be because it's installed in the wrong folder. You can verify this by running in your terminal. 
+
+```bash
+pip show perfumeme
+```
+It has to be this /opt/anaconda3/envs/fragrance/lib/python3.10/site-packages
+If it is not the case, uninstall the package.
+
+```bash
+pip uninstall perfumeme
+```
+And reinstall it with this
+
+```bash
+python -m pip install perfumeme
+```
+For all future operations using pip, make sure to add
+```bash
+python -m  <what_you_want_to_do>
+```
+
 ## 🚀 Start 
 
 Open a Jupyter Notebook and discover more about your favourite molecules ! 
