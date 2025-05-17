@@ -116,3 +116,55 @@ def odor_molecule_perfume(mol):
         dict_mol["perfumes"]= match_molecule_to_perfumes(mol)
         dict_mol["odors"]= match_mol_to_odor(mol)
         return dict_mol
+    
+def what_notes(perfume: str, type: str):
+    """
+    Retrieves the notes of a specified perfume from a JSON database.
+
+    The function loads perfume data from a local JSON file and searches for the notes
+    associated with the given perfume name. The search is case-insensitive.
+
+    Args:
+        perfume (str): The name of the perfume to search for in the perfume data.
+        type (str): The type of notes to retrieve ("top", "heart", "base").
+
+    Returns:
+        list[str] or str: A list of notes associated with the perfume.
+        Returns a message string if no matches are found.
+        Returns an empty list if the data file does not exist.
+
+    Notes:
+        The note matching is performed in uppercase for consistency.
+    """
+    
+    project_root = Path(__file__).resolve().parents[2]  
+    path_perf = project_root / "data" / "perfumes.json"
+    if os.path.exists(path_perf):
+        with open(path_perf, "r", encoding="utf-8") as f:
+            perfumes = json.load(f)
+    else:
+        return []
+    
+        
+    perfume_upper = perfume.upper()
+    type_upper = type.upper()
+    perf_list = []
+    for perf in perfumes:
+        if perfume_upper == perf.get("name", []).upper():
+            perf_list.append(perf.get("name", []))
+    if perf_list == []:
+        return f"Perfume not found."
+
+    for perf in perfumes:
+        if perfume_upper == perf.get("name", []).upper():
+            print(f"{type} notes for {perfume}:")
+            if type_upper == "TOP":
+                return perf.get("top", [])
+            elif type_upper == "HEART":
+                return perf.get("notes", {}).get("heart")
+            elif type_upper == "BASE":
+                return perf.get("base", [])
+        if type_upper not in ["TOP", "HEART", "BASE"]:
+                return f"Invalid note type. Please use 'top', 'heart', or 'base'."
+
+
