@@ -34,7 +34,7 @@ def usable_in_perfume(smiles_or_name: str):
     if pvap is None and boiling_point is None:
         note_type = "undetermined"
         volatility_comment = "⚠️ Insufficient volatility data to classify the note."
-        
+
     else:
 
         pvap_37 = pvap * np.exp(-0.1 * (37 - pvap_temp)) if pvap and pvap_temp else None
@@ -70,7 +70,7 @@ def usable_in_perfume(smiles_or_name: str):
             note_display = f"Note: {note_type.upper()}" if smell_ok else "No odor"
             ax.text(
                 0.05, 0.9, note_display, transform=ax.transAxes,
-                fontsize=8, fontweight='bold', color='darkblue',
+                fontsize=10, fontweight='bold', color='darkblue',
                 bbox=dict(facecolor='white', alpha=0.6, edgecolor='none')
             )
             plt.show()
