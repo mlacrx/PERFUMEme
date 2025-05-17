@@ -132,7 +132,7 @@ The output of this second command will be :
 
 ### 👩‍🔬 Physical properties
 
-Now if you just want to obtain simple properties of the molecule (vapor pressure, vapor pressure temperature, boiling point, enthalpy of vaporisation), you can use our small function __evaporation_trace__. 
+Now if you just want to obtain simple properties of the molecule (vapor pressure, vapor pressure temperature, boiling point, enthalpy of vaporisation), you can use our subfunction __evaporation_trace__. 
 
 ```bash
 
