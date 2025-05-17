@@ -103,17 +103,17 @@ This includes:
 
 ### 🥅 Goal functions of the package
 
-An example on how to make our key functions (__usable_in_perfume__ and __perfume_molecule__) work is shown below for linalool. 
+An example on how to make our key functions (__usable_in_perfume__, __perfume_molecule__, __what_notes__) work is shown below for linalool. 
 
 ```bash
 from perfumeme import usable_in_perfume
 molecule = "linalool"
-summary, plot = usable_in_perfume(molecule)
+summary= usable_in_perfume(molecule)
 print(summary)
-print(plot)
+
 ```
 
-The output of this first command will be : 
+The output will be: 
 
 <img width=400  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
 
@@ -126,9 +126,23 @@ molecule = "linalool"
 print (odor_molecule_perfume(molecule))
 ```
 
-The output of this second command will be : 
+The output will be: 
 
 <img width=700  alt = "odor molecule perfume linalool"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool_perfume.png">
+
+You can also find out what notes the perfume has.
+
+```bash
+from perfumeme import what_notes
+
+print (what_notes("Coco Mademoiselle", "top"))
+print (what_notes("Coco Mademoiselle", "heart"))
+print (what_notes("Coco Mademoiselle", "base"))
+```
+
+The output will be:
+
+<img width=700  alt = "what notes coco mademoiselle"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_what_notes.png">
 
 ### 👩‍🔬 Physical properties
 
