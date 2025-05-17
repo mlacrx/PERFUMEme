@@ -1,4 +1,4 @@
-from perfumeme.usable_in_perfume import usable_in_perfume
+from perfumeme.usable_function import usable_in_perfume
 import pytest
 
 def test_usable_in_perfume():

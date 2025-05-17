@@ -29,12 +29,12 @@ def usable_in_perfume(smiles_or_name: str):
     smell_ok = has_a_smell(smiles_or_name)
     toxicity_ok = not is_toxic_skin(smiles_or_name)
 
-    pvap, boiling_point, pvap_temp, enthalpy, fig = evaporation_trace(smiles_or_name)
+    pvap, boiling_point, pvap_temp, enthalpy, plot_path = evaporation_trace(smiles_or_name)
 
     if pvap is None and boiling_point is None:
         note_type = "undetermined"
         volatility_comment = "⚠️ Insufficient volatility data to classify the note."
-
+        annotated_path = plot_path
     else:
 
         pvap_37 = pvap * np.exp(-0.1 * (37 - pvap_temp)) if pvap and pvap_temp else None
@@ -64,17 +64,20 @@ def usable_in_perfume(smiles_or_name: str):
                 note_type = "base note"
             volatility_comment = f"Estimated from boiling point: **{note_type}**."
 
-        if fig and fig.axes:
-            ax = fig.axes[0]
-            ax.axis()
-            note_display = f"Note: {note_type.upper()}" if smell_ok else "No odor"
-            ax.text(
-                0.05, 0.9, note_display, transform=ax.transAxes,
-                fontsize=8, fontweight='bold', color='darkblue',
-                bbox=dict(facecolor='white', alpha=0.6, edgecolor='none')
-            )
+        if plot_path:
+            img = mpimg.imread(plot_path)
+            fig, ax = plt.subplots()
+            ax.imshow(img)
+            ax.axis('off')
+            if has_a_smell(smiles_or_name):
+                note_display = f"Note: {note_type.upper()}"
+            else:
+                note_display = "No odor"
+            ax.text(0.05, 0.9, note_display, transform=ax.transAxes,
+                    fontsize=8, fontweight='bold', color='darkblue',
+                    bbox=dict(facecolor='white', alpha=0.6, edgecolor='none'))
             plt.show()
-            plt.close(fig)
+            plt.close()
 
     msg = "Perfume suitability summary:\n"
     msg += "👃 Smell detected.\n" if smell_ok else "🚫 No smell detected.\n"
