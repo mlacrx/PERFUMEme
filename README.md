@@ -33,10 +33,6 @@ conda create -n fragrance python=3.10
 ```bash
 conda activate fragrance
 ```
-As the PERFUMEme package is dedicated for usage in a Jupyter Lab, you should install Jupyter Lab by executing the following command.
-```bash
-pip install jupyter lab
-```
 
 [![](https://img.shields.io/badge/pypi-%23FAC898?style=for-the-badge&logo=pypi&logoColor=black)](https://pypi.org/project/perfumeme/)
 
@@ -93,7 +89,7 @@ pip install requests
 
 ## 🔥 Usage
 
-As you may have gathered, the PERFUMEme package is destinated for usage in Jupyter Lab. 
+As you may have gathered, the PERFUMEme package is destinated for usage in a Jupyter Notebook. 
 After installing the package and opening a Jupyter Notebook, you can use PERFUMEme to evaluate the olfactory and physicochemical profile of a molecule using its SMILES representation or its name.
 
 This includes:
@@ -105,17 +101,16 @@ This includes:
 - Perfume compatibility (note type)
 - Perfumes in which the molecule appears
 
-An example on how to make our key functions (usable_in_perfume and perfume_molecule) work is shown below for linalool. 
+### 🥅 Goal functions of the package
+
+An example on how to make our key functions (__usable_in_perfume__ and __perfume_molecule__) work is shown below for linalool. 
 
 ```bash
-import perfumeme as pm
-
-mol = "Linalool"
-
-summary, plot_path = pm.usable_in_perfume(mol)
-print (summary)
-
-display(Image(filename=plot_path))
+from perfumeme import usable_in_perfume
+molecule = "linalool"
+summary, plot = usable_in_perfume(molecule)
+print(summary)
+print(plot)
 ```
 
 The output of this first command will be : 
@@ -125,43 +120,19 @@ The output of this first command will be :
 Now you can find out the presence of your molecule in famous fragrances and extract olfactory information.
 
 ```bash
-import perfumeme as pm
+from perfumeme import odor_molecule_perfume
 
-mol = "Linalool"
-
-pm.combination(mol)
+molecule = "linalool"
+print (odor_molecule_perfume(molecule))
 ```
 
 The output of this second command will be : 
 
+<img width=400  alt = "odor molecule perfume linalool"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool_perfume.png">
 
-Now if you just want to obtain simple properties of the molecule (smell, toxic, vapor pressure, vapor pressure temperature, boiling point, enthalpy of vaporisation), you can use our small functions : has_a_smell, is_toxic_skin and evaporation_trace. 
+### 👩‍🔬 Physical properties
 
-To have information on smell :
-
-```bash
-import perfumeme as pm
-
-mol = "Linalool"
-
-pm.has_a_smell(mol)
-```
-
-The output of this command will be: True.
-
-Information on toxicity : 
-
-```bash
-import perfumeme as pm
-
-mol = "Linalool"
-
-pm.is_toxic_skin(mol)
-```
-
-The output will be: True.
-
-Informations on physical properties : 
+Now if you just want to obtain simple properties of the molecule (vapor pressure, vapor pressure temperature, boiling point, enthalpy of vaporisation), you can use our small function __evaporation_trace__. 
 
 ```bash
 
@@ -179,10 +150,8 @@ print(f"⚡ Enthalpy of Vaporization: {enthalpy} J/mol")
 
 The output will be : 
 
-💨 Vapor Pressure: 0.16 mmHg
-🔥 Boiling Point: 194°C
-🌡️ Vapor Pressure Measured at: 23.5 °C
-⚡ Enthalpy of Vaporization: 51400 J/mol
+<img width=400  alt = "output linalool evaporation trace"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_evaporation_trace.png">
+
 
 ## 🔧 Fixing issues
 
@@ -197,7 +166,8 @@ You can then compare your installed version with the latest available version li
 If your installed version is outdated, update it by running the following command in your terminal:
 
 ```bash
-pip install perfumeme -U
+pip install --upgrade perfumeme
+
 ```
 
 ## 🚀 Start 

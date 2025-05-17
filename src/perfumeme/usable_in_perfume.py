@@ -74,20 +74,16 @@ def usable_in_perfume(smiles_or_name: str):
             if has_a_smell(smiles_or_name):
                 note_display = f"Note: {note_type.upper()}"
             else:
-                note_display="No odor"
-            ax.text(0.05,0.9, note_display, transform=ax.transAxes,
-                    fontsize = 8, fontweight='bold', color = 'darkblue',
-                    bbox = dict(facecolor = 'white', alpha=0.6, edgecolor = 'none'))
-            annotated_path = plot_path.replace(".png","_annotated.png")
-            plt.savefig(annotated_path, bbox_inches = 'tight')
+                note_display = "No odor"
+            ax.text(0.05, 0.9, note_display, transform=ax.transAxes,
+                    fontsize=8, fontweight='bold', color='darkblue',
+                    bbox=dict(facecolor='white', alpha=0.6, edgecolor='none'))
             plt.show()
             plt.close()
-        else:
-            annotated_path = None
 
     msg = "Perfume suitability summary:\n"
     msg += "👃 Smell detected.\n" if smell_ok else "🚫 No smell detected.\n"
     msg += "🧴 Skin-safe.\n" if toxicity_ok else "⚠️ Not confirmed safe for skin contact.\n"
     msg += f"{volatility_comment}"
 
-    return msg, annotated_path
+    return msg

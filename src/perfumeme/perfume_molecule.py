@@ -24,7 +24,8 @@ def match_molecule_to_perfumes(mol):
         The molecule matching is performed in uppercase for consistency.
     """
    
-    path_perf = os.path.abspath(os.path.join(os.getcwd(), "..", "data", "perfumes.json"))
+    project_root = Path(__file__).resolve().parents[2]  
+    path_perf = project_root / "data" / "perfumes.json"
     if os.path.exists(path_perf):
         with open(path_perf, "r", encoding="utf-8") as f:
             perfumes = json.load(f)
@@ -64,7 +65,8 @@ def match_mol_to_odor(mol):
         The molecule name comparison is performed in lowercase for consistency.
     """
 
-    path = os.path.abspath(os.path.join(os.getcwd(), "..", "data", "molecules.json"))
+    project_root = Path(__file__).resolve().parents[2] 
+    path = project_root / "data" / "molecules.json"
     if os.path.exists(path):
         with open(path, "r", encoding="utf-8") as f:
             molecules = json.load(f)

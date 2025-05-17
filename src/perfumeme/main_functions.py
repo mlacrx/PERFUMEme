@@ -55,9 +55,6 @@ def has_a_smell(compound_name_or_smiles):
     result = deep_search(sections)
     return result if result is not None else False
 
-  
-
-
 
 def is_toxic_skin(compound_name_or_smiles):
     """
