@@ -221,7 +221,7 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         boiling_point = fallback_celsius
 
     time = np.linspace(0, 25, 300)
-    plt.figure(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     if enthalpy_vap and vapor_pressure_value and vapor_pressure_temp:
         R = 8.314
@@ -237,22 +237,21 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
         evap_rate = np.exp(-0.05 * time / pressures)
         evap_rate /= evap_rate[0]
 
-        plt.plot(time, evap_rate, label="Clausius-Clapeyron Model", color="green")
+        ax.plot(time, evap_rate, label="Clausius-Clapeyron Model", color="green")
     elif boiling_point:
         evap_rate = np.exp(-0.2 * time / (boiling_point / 10))
         evap_rate /= evap_rate[0]
-        plt.plot(time, evap_rate, label=f"Fallback Model - Tb = {boiling_point:.1f}°C", color="blue")
+        ax.plot(time, evap_rate, label=f"Fallback Model - Tb = {boiling_point:.1f}°C", color="blue")
     else:
         print("⚠️ Not enough data to calculate evaporation curve.")
+        plt.close(fig)
         return None, None, None, None, None
 
-    plt.xlabel("Time (hours)")
-    plt.ylabel("Relative Concentration")
-    plt.title(f"Evaporation Curve of {compound_name_or_smiles}")
-    plt.grid(False)
-    plt.legend()
+    ax.set_xlabel("Time (hours)")
+    ax.set_ylabel("Relative Concentration")
+    ax.set_title(f"Evaporation Curve of {compound_name_or_smiles}")
+    ax.grid(False)
+    ax.legend()
     plt.tight_layout()
-    plt.savefig(save_path, dpi=500)
-    plt.close()
 
-    return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, save_path
+    return vapor_pressure_value, boiling_point, vapor_pressure_temp, enthalpy_vap, fig
