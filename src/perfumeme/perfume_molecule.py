@@ -167,9 +167,4 @@ def what_notes(perfume: str, note_type: str):
         if note_type_upper not in ["TOP", "HEART", "BASE"]:
                 return f"Invalid note type. Please use 'top', 'heart', or 'base'."
 
-perfume = "La nuit de l'Homme"
-note_type = "top"
-expected_output = ["SAGE ESSENCE"]
-print(what_notes(perfume, note_type))
-
 
