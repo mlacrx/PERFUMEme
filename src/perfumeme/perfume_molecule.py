@@ -66,9 +66,9 @@ def match_mol_to_odor(mol):
         The molecule name comparison is performed in lowercase for consistency.
     """
 
-    path_ = Path.home() / ".perfumeme" / "perfumes.json"
+    path = Path.home() / ".perfumeme" / "perfumes.json"
 
-    if not path_.exists():
+    if not path.exists():
         return []
 
     with open(path, "r", encoding="utf-8") as f:
