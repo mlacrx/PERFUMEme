@@ -108,7 +108,7 @@ An example on how to make our key functions (__usable_in_perfume__, __perfume_mo
 ```bash
 from perfumeme import usable_in_perfume
 molecule = "linalool"
-summary= usable_in_perfume(molecule)
+summary = usable_in_perfume(molecule)
 print(summary)
 
 ```
@@ -116,6 +116,7 @@ print(summary)
 The output will be: 
 
 <img width=400  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
+<img width=700  alt = "linalool usable in perfume summary"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_usable_in_perfume.png">
 
 Now you can find out the presence of your molecule in famous fragrances and extract olfactory information.
 
