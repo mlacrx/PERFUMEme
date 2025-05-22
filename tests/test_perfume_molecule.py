@@ -1,4 +1,4 @@
-from perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes, what_notes
+from perfumeme.perfume_molecule import odor_molecule_perfume, match_mol_to_odor, match_molecule_to_perfumes, what_notes, get_mol_from_odor
 import pytest 
 
 def test_match_molecule_to_perfume():
@@ -64,3 +64,17 @@ def test_what_notes():
     perfume_2 = "Libre"
     note_type_2 = "middle"
     assert what_notes(perfume_2, note_type_2) == "Invalid note type. Please use 'top', 'heart', or 'base'."
+
+def test_get_mol_from_odor():
+    """
+    Checks if the function is effective to match odor and molecules
+    """
+    #Test with an odor present in the database
+    odor = "orange"
+    expected_output = ["linalool","limonene","FARNESOL","METHYL ANTHRANILATE"]
+    assert get_mol_from_odor(odor) == expected_output
+
+    #Test with an odor not in the database
+    odor_1 = "love"
+    expected_output_1 = "No molecules found that have this odor."
+    assert get_mol_from_odor(odor_1) == expected_output_1

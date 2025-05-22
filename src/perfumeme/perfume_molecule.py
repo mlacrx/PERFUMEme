@@ -167,5 +167,45 @@ def what_notes(perfume: str, note_type: str):
                 return perf.get("notes", {}).get("base")
         if note_type_upper not in ["TOP", "HEART", "BASE"]:
                 return f"Invalid note type. Please use 'top', 'heart', or 'base'."
+        
+def get_mol_from_odor(odor: str):
+    """
+    Retrieve a list of molecule names associated with a given odor from a local JSON database.
 
+    This function searches a locally stored JSON file (`~/.perfumeme/molecules.json`) for molecules 
+    that have an "odor" attribute matching the specified odor string (case-insensitive). 
+
+    Parameters:
+        odor (str): The name of the odor to search for (e.g., "woody", "citrus", "floral").
+
+    Returns:
+        list[str]: A list of molecule names associated with the specified odor.
+        If no matching odor is found, a message string is returned indicating that no molecules were found.
+
+    Notes:
+        - The JSON file is expected to contain a list of dictionaries, each representing a molecule
+          with keys such as "name" and "odor".
+        - If the JSON file does not exist, the function returns an empty list.
+    """
+    
+    path_mol = Path.home() / ".perfumeme" / "molecules.json"
+    
+    if not path_mol.exists():
+        return []
+    with open(path_mol, "r", encoding="utf-8") as f:
+        molecules = json.load(f)
+    
+    odor_upper = odor.upper()
+
+    matched_molecules = []
+
+    for molecule in molecules:
+        for scent in molecule.get("odor", []):
+            if odor_upper == scent.upper():
+                matched_molecules.append(molecule.get("name",[]))
+    
+    if matched_molecules == []:
+        return f"No molecules found that have this odor."
+    else:
+        return matched_molecules        
 
