@@ -116,7 +116,7 @@ print(summary)
 The output will be: 
 
 <img width=400  alt = "linalool usable in perfume"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/linalool.png">
-<img width=700  alt = "linalool usable in perfume summary"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_usable_in_perfume.png">
+<img width=400  alt = "linalool usable in perfume summary"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_usable_in_perfume.png">
 
 Now you can find out the presence of your molecule in famous fragrances and extract olfactory information.
 
@@ -143,7 +143,7 @@ print (what_notes("Coco Mademoiselle", "base"))
 
 The output will be:
 
-<img width=700  alt = "what notes coco mademoiselle"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_what_notes.png">
+<img width=400  alt = "what notes coco mademoiselle"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_what_notes.png">
 
 ### 👩‍🔬 Physical properties
 
@@ -165,7 +165,7 @@ print(f"⚡ Enthalpy of Vaporization: {enthalpy} J/mol")
 
 The output will be : 
 
-<img width=400  alt = "output linalool evaporation trace"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_evaporation_trace.png">
+<img width=300  alt = "output linalool evaporation trace"  src = "https://github.com/mlacrx/perfumeme/blob/main/assets/output_evaporation_trace.png">
 
 
 ## 🔧 Fixing issues
