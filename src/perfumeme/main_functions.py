@@ -94,7 +94,7 @@ def is_toxic_skin(compound_name_or_smiles):
     return look_toxicity_skin(sections)
   
 
-def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporation_curve.png"):
+def evaporation_trace(compound_name_or_smiles: str):
     """
     Computes and plots the evaporation profile of a compound using thermodynamic data from PubChem.
 
@@ -113,7 +113,7 @@ def evaporation_trace(compound_name_or_smiles: str, save_path: str = "evaporatio
             - boiling_point (float or None): Boiling point in °C if found, else None.
             - vapor_pressure_temp (float or None): Temperature at which vapor pressure was measured, in °C.
             - enthalpy_vap (float or None): Enthalpy of vaporization in J/mol.
-            - save_path (str): The path where the plot was saved.
+            - fig (matplotlib.figure or None): Figure object of the plot if successful, else None.
 
 
     Notes:
